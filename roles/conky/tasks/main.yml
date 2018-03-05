@@ -29,5 +29,6 @@
     state: started
     enabled: True
     daemon-reload: True
+    user: true
   tags:
       - conky
