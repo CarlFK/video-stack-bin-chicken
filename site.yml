@@ -1,8 +1,17 @@
 ---
-hosts: desktop-tweeks
+- hosts: desktop-tweeks
   roles:
   - desktop-tweeks
 
-hosts: rnd
+- hosts: rnd
   roles:
   - rnd
+
+- hosts: voctotests
+  roles:
+  - voctotests
+
+- hosts: conky
+  roles:
+  - conky
+

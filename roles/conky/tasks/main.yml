@@ -1,0 +1,27 @@
+---
+- name: install conky
+  apt:
+    name: "{{ item }}"
+  with_items:
+  - conky
+  - conky-all
+    # - conky-manager
+  - lm-sensors
+
+- name: put conky config and autostart files in place
+  copy:
+    src: files/config/
+    dest: /home/{{ user_name }}/.config/
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+  tags:
+      - conky
+      - testme
+
+- name: conky | Start the conky service
+  service:
+      name=conky
+      state=started
+      enabled=true
+  tags:
+      - conky

@@ -6,14 +6,14 @@
   with_items:
   - git
   - vim
-  - vizzini-dkms
+    # - vizzini-dkms
   # for mode-switch:
   - openocd
-  - flterm
+    # - flterm
   # hwinfo --monitor shows   Model: "HDMI2USB-2"
   - hwinfo
     # help carl reimage
-  - grub-ipxe
+    # - grub-ipxe
     # deps to build crelay
   - libftdi1
   - libftdi-dev
@@ -33,8 +33,11 @@
 
 # Blacklist the ftdi_sio driver module
 - kernel_blacklist:
-    name: ftdi_sio
+    name: "{{ item }}"
     state: present
+  with_items:
+    - ftdi_sio
+    - xr_usb_serial_common # for atlys? (or new viz driver?
 
 - name: Create ~/bin dir
   file:
