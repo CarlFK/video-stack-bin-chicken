@@ -5,10 +5,9 @@
   with_items:
   - conky
   - conky-all
-    # - conky-manager
   - lm-sensors
 
-- name: put conky config and autostart files in place
+- name: put conky config in place
   copy:
     src: files/config/
     dest: /home/{{ user_name }}/.config/
@@ -16,12 +15,19 @@
     group: "{{ user_name }}"
   tags:
       - conky
-      - testme
 
-- name: conky | Start the conky service
+- name: put conky service in place
+  copy:
+    src: files/systemd/
+    dest: /etc/systemd/
+  tags:
+      - conky
+
+- name: Start the conky service
   service:
-      name=conky
-      state=started
-      enabled=true
+    name: conky
+    state: started
+    enabled: True
+    daemon-reload: True
   tags:
       - conky
