@@ -39,7 +39,7 @@ conky.config = {
 	border_width = 6,
 
 -- Default colors and also border colors, grey90 == #e5e5e5
-	default_color = '#FFFFCC',
+	default_color = '#808080',
 
 	own_window_colour = 'brown',
 	own_window_transparent = true,
@@ -74,7 +74,7 @@ Core 2: ${freq 3} MHz    ${cpu cpu3}% ${color 597DB2}${cpubar cpu3}$color
 Core 3: ${freq 4} MHz    ${cpu cpu4}% ${color 597DB2}${cpubar cpu4}$color
 ${loadgraph }
 NAME            ${tab 80} PID	 CPU%  	MEM% ${alignr}Load: ${loadavg 1} ${loadavg 2} ${loadavg 3}
-${color CCFFFF}${top name 1} ${tab 80}${top pid 1} ${top cpu 1} ${top mem 1}
+${color 8C8f8F}${top name 1} ${tab 80}${top pid 1} ${top cpu 1} ${top mem 1}
 ${top name 2} ${tab 80}${top pid 2} ${top cpu 2} ${top mem 2}
 ${top name 3} ${tab 80}${top pid 3} ${top cpu 3} ${top mem 3}
 ${top name 4} ${tab 80}${top pid 4} ${top cpu 4} ${top mem 4}
@@ -87,6 +87,7 @@ RAM: $memperc%  ${color FF6600} ${membar 6}$color
 Swap: $swapperc%   ${color FF6600} ${swapbar 6}$color
 \
 / ${fs_type} ${fs_size} ${fs_free_perc /}% ${color FFFF33} ${fs_bar 6 /}$color
+/srv/video/ ${fs_type /srv/video} ${fs_size /srv/video} ${fs_free_perc /srv/video}% ${color FFFF33} ${fs_bar 6 /srv/video}$color
 Read: ${diskio_read}${tab 60}${diskiograph_read 25,250} ${alignr}Write: ${diskio_write} ${diskiograph_write 25,250}
 ${color CC9900}p5p1 ${addr p5p1} ${hr 2}$color
 Down: $color${downspeed p5p1} k/s ${tab 60}${downspeedgraph p5p1 25,250 000000 ff0000} ${alignr}Up: ${upspeed p5p1} k/s ${upspeedgraph p5p1 25,250 000000 00ff00}$color
