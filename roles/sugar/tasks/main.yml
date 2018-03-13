@@ -1,0 +1,50 @@
+---
+
+- name: install R&D related packages
+  apt:
+    name: "{{ item }}"
+  with_items:
+  - git
+  - vim
+    # - vizzini-dkms
+  # for mode-switch:
+    # - flterm
+  # hwinfo --monitor shows   Model: "HDMI2USB-2"
+  - hwinfo
+    # help carl reimage
+    # - grub-ipxe
+  # for testing
+  - mplayer
+  # to display hdmi2usb
+  - gstreamer1.0-plugins-base
+  - gstreamer1.0-plugins-bad
+  - gstreamer1.0-plugins-ugly
+  - gstreamer1.0-plugins-good
+  - gstreamer1.0-tools
+  - python-wxgtk3.0
+  # for moutning randoms usb drives
+  - pmount
+
+- name: Create ~/bin dir
+  file:
+    state: directory
+    path: /home/{{ user_name }}/bin
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+
+- name: git clone bunch of things
+  git:
+    repo: "https://github.com/{{ item[0] }}/{{ item[1] }}.git"
+    dest: "/home/{{ user_name }}/{{ item[1] }}"
+    # depth: 1
+    force: yes
+  become: true
+  become_user: "{{ user_name }}"
+  with_list:
+  - [timvideos, HDMI2USB-mode-switch]
+  - [timvideos, HDMI2USB-litex-firmware]
+    # - [timvideos, HDMI2USB-firmware-prebuilt]
+  - [CarlFK, clocky]
+  - [CarlFK, voctomix-outcasts]
+
+

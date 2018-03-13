@@ -15,3 +15,7 @@
   roles:
   - conky
 
+- hosts: sugar
+  roles:
+  - sugar
+
