@@ -7,10 +7,17 @@
   - conky-all
   - lm-sensors
 
+- name: Create dirs
+  file:
+    state: directory
+    path: /home/{{ user_name }}/.config/conky/
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+
 - name: put conky config in place
-  copy:
-    src: files/config/
-    dest: /home/{{ user_name }}/.config/
+  template:
+    src: templates/conkyrc.j2
+    dest: /home/{{ user_name }}/.config/conky/conkyrc
     owner: "{{ user_name }}"
     group: "{{ user_name }}"
   tags:

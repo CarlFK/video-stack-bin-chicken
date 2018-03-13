@@ -89,9 +89,9 @@ Swap: $swapperc%   ${color FF6600} ${swapbar 6}$color
 / ${fs_type} ${fs_size} ${fs_free_perc /}% ${color FFFF33} ${fs_bar 6 /}$color
 /srv/video/ ${fs_type /srv/video} ${fs_size /srv/video} ${fs_free_perc /srv/video}% ${color FFFF33} ${fs_bar 6 /srv/video}$color
 Read: ${diskio_read}${tab 60}${diskiograph_read 25,250} ${alignr}Write: ${diskio_write} ${diskiograph_write 25,250}
-${color CC9900}p5p1 ${addr p5p1} ${hr 2}$color
-Down: $color${downspeed p5p1} k/s ${tab 60}${downspeedgraph p5p1 25,250 000000 ff0000} ${alignr}Up: ${upspeed p5p1} k/s ${upspeedgraph p5p1 25,250 000000 00ff00}$color
-# Total: ${totaldown p5p1} ${alignr}Total: ${totalup p5p1}
+${color CC9900}{{ ansible_default_ipv4.interface }} ${addr {{ ansible_default_ipv4.interface }}} ${hr 2}$color
+Down: $color${downspeed {{ ansible_default_ipv4.interface }}} k/s ${tab 60}${downspeedgraph {{ ansible_default_ipv4.interface }} 25,250 000000 ff0000} ${alignr}Up: ${upspeed {{ ansible_default_ipv4.interface }}} k/s ${upspeedgraph {{ ansible_default_ipv4.interface }} 25,250 000000 00ff00}$color
+# Total: ${totaldown {{ ansible_default_ipv4.interface }}} ${alignr}Total: ${totalup {{ ansible_default_ipv4.interface }}}
 Inbound: ${tcp_portmon 1 32767 count} Outbound: ${tcp_portmon 32768 61000 count}${alignr}Total: ${tcp_portmon 1 65535 count}
 \
 ${color CC9900}/var/log/syslog ${hr 2}$color
