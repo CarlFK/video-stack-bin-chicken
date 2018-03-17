@@ -25,12 +25,15 @@
   # for moutning randoms usb drives
   - pmount
 
-- name: Create ~/bin dir
+- name: Create ~/bin and ~/temp dir
   file:
     state: directory
-    path: /home/{{ user_name }}/bin
+    path: /home/{{ user_name }}/{{ item }}
     owner: "{{ user_name }}"
     group: "{{ user_name }}"
+  with_list:
+  - bin
+  - temp
 
 - name: git clone bunch of things
   git:
