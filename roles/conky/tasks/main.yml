@@ -17,7 +17,7 @@
 - name: put conky config in place
   template:
     src: templates/conkyrc.j2
-    dest: /home/{{ user_name }}/.config/conky/conkyrc
+    dest: /home/{{ user_name }}/.config/conky/conky.conf
     owner: "{{ user_name }}"
     group: "{{ user_name }}"
   tags:
