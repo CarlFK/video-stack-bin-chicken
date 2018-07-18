@@ -9,6 +9,7 @@
     # - vizzini-dkms
   # for mode-switch:
     # - flterm
+  - tio
   # hwinfo --monitor shows   Model: "HDMI2USB-2"
   - hwinfo
     # help carl reimage
@@ -50,4 +51,9 @@
   - [CarlFK, clocky]
   - [CarlFK, voctomix-outcasts]
 
-
+- lineinfile:
+    path: /home/{{ user_name }}/.bashrc
+    regexp: '^export DISPLAY='
+    line: 'export DISPLAY=:0.0'
+  tags:
+    - display

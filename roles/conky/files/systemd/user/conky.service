@@ -11,4 +11,4 @@ ExecStart=/usr/bin/conky
 Environment=DISPLAY=:0
 
 [Install]
-WantedBy=graphical.target
+WantedBy=xlogin.target

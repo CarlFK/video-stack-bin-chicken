@@ -6,6 +6,8 @@
   - conky
   - conky-all
   - lm-sensors
+  tags:
+      - conky
 
 - name: Create dirs
   file:
@@ -13,6 +15,8 @@
     path: /home/{{ user_name }}/.config/conky/
     owner: "{{ user_name }}"
     group: "{{ user_name }}"
+  tags:
+      - conky
 
 - name: put conky config in place
   template:
@@ -30,12 +34,22 @@
   tags:
       - conky
 
+- name: enable conky systemd units
+  file:
+    state: link
+    src: "/etc/systemd/user/conky.service"
+    dest: "/home/{{ user_name }}/.config/systemd/user/xlogin.target.wants/connky.service"
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+  tags:
+      - conky
+
 - name: Start the conky service
   service:
     name: conky
-    state: started
-    enabled: True
+    state: restarted
+    enabled: False
     daemon-reload: True
     user: true
   tags:
-      - conky
+      - conkyx
