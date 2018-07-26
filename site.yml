@@ -19,3 +19,6 @@
   roles:
   - sugar
 
+- hosts: nothing
+  roles:
+
