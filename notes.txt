@@ -1,3 +1,9 @@
+https://github.com/voc/decklink-debugger
+https://c3voc.de/wiki/decklink-debugger
+https://pkg.c3voc.de/pool/main/d/decklink-debugger/
+https://github.com/voc/cm/blob/master/ansible/roles/common/tasks/repos.yml#L3
+
+
 sudo apt --assume-yes install software-properties-common apt-transport-https
 sudo wget https://raw.githubusercontent.com/voc/cm/master/ansible/roles/common/files/voc_repo.key -O /etc/apt/trusted.gpg.d/voc_repo.asc
 sudo apt-add-repository --update https://pkg.c3voc.de
