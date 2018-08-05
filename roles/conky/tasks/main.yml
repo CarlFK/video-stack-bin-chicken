@@ -12,9 +12,12 @@
 - name: Create dirs
   file:
     state: directory
-    path: /home/{{ user_name }}/.config/conky/
+    path: "/home/{{ user_name }}/.config/{{ item }}"
     owner: "{{ user_name }}"
     group: "{{ user_name }}"
+  with_items:
+  - conky
+  - systemd/user/xlogin.target.wants
   tags:
       - conky
 

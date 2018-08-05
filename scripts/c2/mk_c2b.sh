@@ -13,6 +13,7 @@ apt-get --assume-yes install \
     python python3-pkg-resources \
     usbutils vizzini-dkms voctomix-outcasts \
     policykit-1 \
+    ifupdown \
     vim
 
 cat > /lib/udev/rules.d/85-local-atlys-fx2-firmware.rules <<EOF
