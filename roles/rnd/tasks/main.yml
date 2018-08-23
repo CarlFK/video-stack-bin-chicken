@@ -113,7 +113,7 @@
   get_url:
     dest: /home/{{ user_name }}/local
     owner: "{{ user_name }}"
-    url: "http://pc8/xilinx/{{ item.value }}"
+    url: "http://pc8/xilinx/{{ item }}"
   with_items:
   - Xilinx_Vivado_SDK_2018.2_0614_1954.tar.gz
   - Xilinx_Vivado_SDx_Update_2018.2.1_0726_1815.tar.gz
