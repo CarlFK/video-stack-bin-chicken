@@ -4,7 +4,7 @@
 
 # run from the dir that contains the playbook and inventory repos
 # like this:
-# cp ans-it.sh ../..; cd ../..; ./ans-it.sh cboxs cnt6
+# cp ans-it.sh ../../..; cd ../../..; ./ans-it.sh cboxs cnt6
 
 echo ./ans-it.sh <dir> <hostname>
 
