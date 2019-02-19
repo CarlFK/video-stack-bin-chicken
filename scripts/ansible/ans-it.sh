@@ -7,12 +7,13 @@
 # cp ans-it.sh ../../..; cd ../../..; ./ans-it.sh cboxs cnt6
 
 echo ./ans-it.sh dir hostname
+echo ./ans-it.sh cboxs bare
 
 inv_dir=$1
 box=$2
 
-# inv_repo=ansible
 inv_repo=video-stack-inventory
+# inv_repo=ansible
 # inv_repo=av-foss-stack
 
 ansible-playbook \

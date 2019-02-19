@@ -1,0 +1,95 @@
+[onsite:children]
+tftp-dhcp-server
+nfs-server
+nfs-server
+voctomix
+opsis
+xorg
+veyepar-basic
+veyepar-secrets
+veyepar-encoder-nfs-storage
+rnd
+sugar
+conky
+
+
+[tftp-dhcp-server]
+# cnt6
+# pc8
+negk
+
+[nfs-server]
+
+[voctomix]
+dc10b
+cnt1
+cnt5
+# cnt6
+# cnt7
+# gator
+# voctotest
+
+[opsis]
+# cnt6
+# cnt3
+# u2
+
+[xorg]
+# cnt6
+# u2
+dc10b
+# gator
+
+[veyepar-basic]
+# cnt2
+val1
+val2
+# gator
+voctotest
+cnt6
+
+[veyepar-secrets]
+cnt1
+# cnt2
+val1
+# gator
+voctotest
+cnt6
+
+[veyepar-encoder-nfs-storage]
+
+
+[rnd]
+nk2
+gator
+# cnt1
+# cnt2
+cnt6
+trist.local
+trist
+bare
+
+[sugar]
+cnt1
+cnt2
+cnt6
+val1
+bb4
+dc10b
+u2
+gator
+bb5
+bb7
+
+[conky]
+cnt1
+cnt2
+cnt6
+bb4
+dc10b
+u2
+# gator
+bb5
+bb7
+
+

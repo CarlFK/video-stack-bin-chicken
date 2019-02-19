@@ -1,0 +1,69 @@
+---
+user_name: juser
+user_password_crypted: "$6$khprmotoVWYLZY2W$Gj5Y6p4R.LsXQdL2xf6umhInzZ9GCG6USXB0XIl86m5.IbqSOPXJ0mxVUE7y5kGFE/arHgExAxoz0kEULiplZ."
+
+autologin: True
+
+publisher: ndv
+org: ps1
+show: cpx18
+
+time_zone: US/Central
+
+frequency: 60
+
+# domain:
+
+apt_proxy: true
+
+# apt.enable_oldstable: true
+
+staticips:
+  write_hosts: false
+  write_interfaces: false
+  hosts: []
+
+# Git repos:
+playbook_repo: https://salsa.debian.org/debconf-video-team/ansible
+# playbook_repo: https://github.com/CarlFK/video-stack-deploy.git
+playbook_branch: master
+
+inventory_repo: https://github.com/CarlFK/video-stack-inventory.git
+inventory_repo_dir: cboxs
+
+blackmagic:
+    urls:
+    - desktopvideo: http://pc8/bm/Blackmagic_Desktop_Video_Linux_10.11.2/deb/x86_64/desktopvideo_10.11.2a3_amd64.deb
+    # - desktopvideo_gui: http://pc8/bm/Blackmagic_Desktop_Video_Linux_10.11.1/deb/amd64/desktopvideo-gui_10.11.1a4_amd64.deb
+    - mediaexpress: http://pc8/bm/Blackmagic_Desktop_Video_Linux_10.11.2/deb/x86_64/mediaexpress_3.5.6a2_amd64.deb
+    dkms_version: 10.11.2a3
+
+voctomix:
+  display_system: x
+  framerate: 30
+  previews: false
+
+# streaming: null
+
+serial_terminal:
+    #- flterm
+- cu
+- tio
+
+sources:
+- Camera
+- Grabber
+
+rsync_excludes:
+- 0[0-7]*.ts
+- 0[0-7]*.ts.mp4
+- 0[0-7]*.ts.wav.png
+- 2*.ts
+- 2*.ts.mp4
+- 2*.ts.wav.png
+
+# what the pxe server can install
+ubuntu_suites: [trusty, xenial, artful, bionic, cosmic]
+
+veyepar_url: http://veyepar.nextdayvideo.com
+

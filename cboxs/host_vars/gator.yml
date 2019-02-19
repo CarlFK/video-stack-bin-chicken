@@ -1,0 +1,11 @@
+---
+room_name: electronics_lab
+
+blackmagic_sources:
+- card: 0
+  connection: HDMI
+  audio: true
+
+sources:
+- Camera
+- Grabber
