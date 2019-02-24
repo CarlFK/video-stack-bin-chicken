@@ -23,8 +23,10 @@
   - gstreamer1.0-plugins-good
   - gstreamer1.0-tools
   - python-wxgtk3.0
-  # for moutning randoms usb drives
+  # for moutning random usb drives
   - pmount
+  # for moutning random boxes
+  - sshfs
 
 - name: Create ~/bin and ~/temp dir
   file:
