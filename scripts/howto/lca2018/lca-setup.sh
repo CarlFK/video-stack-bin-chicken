@@ -1,0 +1,147 @@
+#!/bin/bash -ex
+
+# scp lca-setup.sh lca-setup_eth.cfg juser@gator:
+# sudo mv lca-setup_eth.cfg /etc/network/interfaces.d/
+
+# stop vocto
+# stop-all-the-things
+
+# stuff needed cuz minimal install
+sudo apt -y install pmount libx11-6 ifupdown
+
+# quick copy from local drive of:
+# Vivado and key
+# https://github.com/mithro/linux-litex.git
+
+if [[ -z $xdisk || -z $nic ]]; then
+  set +x
+  echo set xdisk and nic:
+  echo export xdisk=sda1
+  echo export nic=enp3s0 # enp0s31f6
+  exit
+fi
+
+sudo ip addr del 192.168.100.100/24 dev $nic || true
+
+sudo adduser $USER video
+sudo adduser $USER dialout
+
+if [ ! -d local/xilinx ]; then
+
+    pmount ${xdisk}
+
+    mkdir -p local/xilinx
+    (cd local/xilinx
+    # rsync -trvP /media/${xdisk}/tv/xilinx/Xilinx .
+    # tar --keep-newer-files -xvf /media/${xdisk}/tv/xilinx/Xilinx.2018.3.tgz
+    # sudo ln -sf ~/local/xilinx/opt/Xilinx /opt
+    tar --keep-newer-files -xvf /media/${xdisk}/tv/xilinx/Vivado_2018.3.tgz
+    sudo ln -sf /tools/Xilinx /opt
+    sudo chown juser: /opt/Xilinx
+    )
+
+    rsync -trvP /media/${xdisk}/tv/xilinx/.Xilinx .
+
+    rsync -trvP /media/${xdisk}/tv/linux-litex .
+
+    mkdir -p ~/bin
+    # cp /media/${xdisk}/tv/flterm ~/bin
+
+    pumount ${xdisk}
+fi
+export LD_LIBRARY_PATH=/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/opt/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9/lib
+
+git -C linux-litex pull
+export LINUX_GITLOCAL=~/linux-litex
+
+mkdir -p tv
+cd tv
+
+sudo apt-get -y install build-essential libncurses5-dev gcc make git exuberant-ctags bc libssl-dev
+
+if [ ! -d HDMI2USB-mode-switch ]; then
+    git clone https://github.com/timvideos/HDMI2USB-mode-switch.git
+fi
+(cd HDMI2USB-mode-switch/udev
+git pull
+make install
+sudo udevadm control --reload-rules
+# need to triger for plugged in board:
+# udevadm trigger [options] [devpath|file...]
+)
+
+if [ ! -d litex-buildenv ]; then
+    git clone https://github.com/timvideos/litex-buildenv.git
+fi
+
+cd litex-buildenv
+git pull
+
+export CPU=or1k CPU_VARIANT= PLATFORM=arty TARGET=net FIRMWARE=firmware
+./scripts/download-env.sh
+# cp ~/bin/flterm ./build/conda/bin/flterm
+source ./scripts/enter-env.sh
+
+# make tftpd_stop
+make gateware
+
+sudo apt-get -y install atftpd libpixman-1-dev pkg-config libglib2.0-dev python-minimal libftdi-dev uml-utilities openvpn net-tools bison flex
+sudo apt -y build-dep qemu
+# export QEMU_REMOTE=https://github.com/stffrdhrn/qemu.git
+# export QEMU_BRANCH=litex
+echo 1 hdmi2usb on qemu
+./scripts/build-qemu.sh
+
+sudo apt-get -y install build-essential libncurses5-dev gcc make git exuberant-ctags bc libssl-dev
+
+export CPU=or1k CPU_VARIANT=linux PLATFORM=arty TARGET=net FIRMWARE=linux
+./scripts/build-linux.sh
+make image
+
+echo 2 linux on qemu
+echo cat /proc/cpuinfo
+echo cpu         : OpenRISC-0
+
+./scripts/build-qemu.sh
+
+# remove networking used by QEMU
+sudo ip link delete dev tap0
+
+sudo dmesg --clear
+read -p "plug in Arty usb and hit Enter...."
+sudo dmesg --read-clear
+
+echo Now on arty
+
+export CPU=or1k CPU_VARIANT=linux PLATFORM=arty TARGET=net FIRMWARE=firmware
+
+make gateware-load
+make firmware-load
+
+# hook Arty to lan
+sudo ip addr add 192.168.100.100/24 dev ${nic}
+sudo ip link set ${nic} up
+
+make tftpd_start
+make tftp
+
+# boot hdmi2usb on Arty
+make gateware-load
+make firmware-connect
+
+export CPU=or1k CPU_VARIANT=linux PLATFORM=arty TARGET=net FIRMWARE=linux
+make gateware
+./scripts/build-linux.sh
+
+make tftpd_stop
+make tftpd_start
+make tftp
+
+# boot linux on Arty
+make gateware-load
+
+echo cat "/proc/cpuinfo"
+echo cpu "architecture    : OpenRISC 1000 (1.1-rev0)"
+
+make firmware-connect
+
