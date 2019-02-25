@@ -17,7 +17,7 @@ if [[ -z $xdisk || -z $nic ]]; then
   set +x
   echo set xdisk and nic:
   echo export xdisk=sda1
-  echo export nic=enp3s0 # enp0s31f6
+  echo export nic=enp3s0 enp0s31f6
   exit
 fi
 
@@ -26,18 +26,21 @@ sudo ip addr del 192.168.100.100/24 dev $nic || true
 sudo adduser $USER video
 sudo adduser $USER dialout
 
-if [ ! -d local/xilinx ]; then
+if [ ! -d /opt/Xilinx ]; then
+
+    sudo mkdir Xilinx
+    sudo chown $USER: Xilinx
 
     pmount ${xdisk}
 
-    mkdir -p local/xilinx
+    tar --keep-newer-files -xvf /media/${xdisk}/tv/xilinx/Vivado_2018.3.tbz
+
+    # mkdir -p local/xilinx
     (cd local/xilinx
     # rsync -trvP /media/${xdisk}/tv/xilinx/Xilinx .
-    # tar --keep-newer-files -xvf /media/${xdisk}/tv/xilinx/Xilinx.2018.3.tgz
-    # sudo ln -sf ~/local/xilinx/opt/Xilinx /opt
-    tar --keep-newer-files -xvf /media/${xdisk}/tv/xilinx/Vivado_2018.3.tgz
-    sudo ln -sf /tools/Xilinx /opt
-    sudo chown juser: /opt/Xilinx
+    # sudo ln -sf ~/local/xilinx/Xilinx /opt
+    # sudo ln -sf /tools/Xilinx /opt
+    # sudo chown juser: /opt/Xilinx
     )
 
     rsync -trvP /media/${xdisk}/tv/xilinx/.Xilinx .
@@ -79,7 +82,6 @@ git pull
 
 export CPU=or1k CPU_VARIANT= PLATFORM=arty TARGET=net FIRMWARE=firmware
 ./scripts/download-env.sh
-# cp ~/bin/flterm ./build/conda/bin/flterm
 source ./scripts/enter-env.sh
 
 # make tftpd_stop
@@ -96,6 +98,7 @@ sudo apt-get -y install build-essential libncurses5-dev gcc make git exuberant-c
 
 export CPU=or1k CPU_VARIANT=linux PLATFORM=arty TARGET=net FIRMWARE=linux
 ./scripts/build-linux.sh
+
 make image
 
 echo 2 linux on qemu
@@ -115,6 +118,9 @@ echo Now on arty
 
 export CPU=or1k CPU_VARIANT=linux PLATFORM=arty TARGET=net FIRMWARE=firmware
 
+conda upgrade gcc-${CPU}-elf-newlib
+conda upgrade flterm
+
 make gateware-load
 make firmware-load
 
@@ -127,6 +133,7 @@ make tftp
 
 # boot hdmi2usb on Arty
 make gateware-load
+
 make firmware-connect
 
 export CPU=or1k CPU_VARIANT=linux PLATFORM=arty TARGET=net FIRMWARE=linux
