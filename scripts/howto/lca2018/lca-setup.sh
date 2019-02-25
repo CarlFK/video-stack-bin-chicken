@@ -36,19 +36,17 @@ if [ ! -d /opt/Xilinx ]; then
     tar --keep-newer-files -xvf /media/${xdisk}/tv/xilinx/Vivado_2018.3.tbz
 
     # mkdir -p local/xilinx
-    (cd local/xilinx
+    # (cd local/xilinx
     # rsync -trvP /media/${xdisk}/tv/xilinx/Xilinx .
-    # sudo ln -sf ~/local/xilinx/Xilinx /opt
     # sudo ln -sf /tools/Xilinx /opt
     # sudo chown juser: /opt/Xilinx
-    )
+    # )
 
     rsync -trvP /media/${xdisk}/tv/xilinx/.Xilinx .
 
     rsync -trvP /media/${xdisk}/tv/linux-litex .
 
     mkdir -p ~/bin
-    # cp /media/${xdisk}/tv/flterm ~/bin
 
     pumount ${xdisk}
 fi
@@ -133,6 +131,9 @@ make tftp
 
 # boot hdmi2usb on Arty
 make gateware-load
+
+conda upgrade gcc-${CPU}-elf-newlib
+conda upgrade flterm
 
 make firmware-connect
 
