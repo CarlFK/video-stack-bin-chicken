@@ -3,9 +3,9 @@
   roles:
   - desktop-tweeks
 
-- hosts: rnd
-  roles:
-  - rnd
+  # - hosts: rnd
+  # roles:
+  # - rnd
 
 - hosts: voctotests
   roles:
@@ -18,7 +18,4 @@
 - hosts: sugar
   roles:
   - sugar
-
-- hosts: nothing
-  roles:
 

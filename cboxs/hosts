@@ -27,25 +27,24 @@ cnt1
 cnt5
 # cnt6
 # cnt7
-# gator
 # voctotest
 
 [opsis]
 # cnt6
 # cnt3
 # u2
+gator
 
 [xorg]
 # cnt6
 # u2
 dc10b
-# gator
+gator
 
 [veyepar-basic]
 # cnt2
 val1
 val2
-# gator
 voctotest
 cnt6
 
@@ -53,7 +52,6 @@ cnt6
 cnt1
 # cnt2
 val1
-# gator
 voctotest
 cnt6
 
@@ -62,11 +60,9 @@ cnt6
 
 [rnd]
 nk2
-gator
 # cnt1
 # cnt2
 cnt6
-bare
 
 [sugar]
 cnt1
@@ -87,7 +83,7 @@ cnt6
 bb4
 dc10b
 u2
-# gator
+gator
 bb5
 bb7
 

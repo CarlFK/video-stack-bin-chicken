@@ -28,28 +28,24 @@ sudo adduser $USER dialout
 
 if [ ! -d /opt/Xilinx ]; then
 
-    sudo mkdir Xilinx
-    sudo chown $USER: Xilinx
-
     pmount ${xdisk}
 
+    mkdir -p local
+    (cd local
     tar --keep-newer-files -xvf /media/${xdisk}/tv/xilinx/Vivado_2018.3.tbz
-
-    # mkdir -p local/xilinx
-    # (cd local/xilinx
     # rsync -trvP /media/${xdisk}/tv/xilinx/Xilinx .
-    # sudo ln -sf /tools/Xilinx /opt
-    # sudo chown juser: /opt/Xilinx
-    # )
+    sudo ln -sf ~/local/Xilinx /opt
+    # sudo chown $USER: /opt/Xilinx
+    )
 
     rsync -trvP /media/${xdisk}/tv/xilinx/.Xilinx .
 
     rsync -trvP /media/${xdisk}/tv/linux-litex .
 
-    mkdir -p ~/bin
-
     pumount ${xdisk}
+
 fi
+
 export LD_LIBRARY_PATH=/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/opt/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9/lib
 
 git -C linux-litex pull
@@ -147,6 +143,9 @@ make tftp
 
 # boot linux on Arty
 make gateware-load
+
+conda upgrade gcc-${CPU}-elf-newlib
+conda upgrade flterm
 
 echo cat "/proc/cpuinfo"
 echo cpu "architecture    : OpenRISC 1000 (1.1-rev0)"
