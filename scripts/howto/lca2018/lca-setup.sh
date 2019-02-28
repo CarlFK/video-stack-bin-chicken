@@ -32,6 +32,9 @@ if [ ! -d /opt/Xilinx ]; then
 
     mkdir -p local
     (cd local
+    # xsetup -b Install \
+    #    -a XilinxEULA,3rdPartyEULA,WebTalkTerms \
+    #    -c install_config.txt
     tar --keep-newer-files -xvf /media/${xdisk}/tv/xilinx/Vivado_2018.3.tbz
     # rsync -trvP /media/${xdisk}/tv/xilinx/Xilinx .
     sudo ln -sf ~/local/Xilinx /opt
