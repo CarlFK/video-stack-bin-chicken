@@ -115,8 +115,8 @@ echo Now on arty
 
 export CPU=or1k CPU_VARIANT=linux PLATFORM=arty TARGET=net FIRMWARE=firmware
 
-conda upgrade gcc-${CPU}-elf-newlib
-conda upgrade flterm
+# conda upgrade gcc-${CPU}-elf-newlib
+# conda upgrade flterm
 
 make gateware-load
 make firmware-load
@@ -131,8 +131,8 @@ make tftp
 # boot hdmi2usb on Arty
 make gateware-load
 
-conda upgrade gcc-${CPU}-elf-newlib
-conda upgrade flterm
+# conda upgrade gcc-${CPU}-elf-newlib
+# conda upgrade flterm
 
 make firmware-connect
 
