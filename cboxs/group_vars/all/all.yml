@@ -22,8 +22,12 @@ apt_proxy: true
 staticips:
   write_hosts: false
   write_interfaces: true
+  hosts:
+    - hostname: gator
+      ip: 10.10.0.20
+      mac: 80:3f:5d:08:c3:9f
+      disk: nvme0n1
 
-#  hosts: []
 
 # Git repos:
 playbook_repo: https://salsa.debian.org/debconf-video-team/ansible
