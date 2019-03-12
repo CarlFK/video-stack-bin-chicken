@@ -22,6 +22,7 @@ trist
 [nfs-server]
 
 [voctomix]
+gator
 dc10b
 cnt1
 cnt5
@@ -33,7 +34,6 @@ cnt5
 # cnt6
 # cnt3
 # u2
-gator
 timbot
 
 [xorg]
