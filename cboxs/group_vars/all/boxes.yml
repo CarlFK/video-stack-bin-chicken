@@ -68,6 +68,7 @@ boxes:
       mac: b4:99:ba:e9:5c:5c
 
     - hostname: gator
+      ip: 10.10.0.20
       mac: 80:3f:5d:08:c3:9f
       disk: nvme0n1
 
