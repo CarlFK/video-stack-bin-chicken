@@ -48,6 +48,7 @@ val1
 val2
 voctotest
 cnt6
+gator
 
 [veyepar-secrets]
 cnt1
@@ -55,6 +56,7 @@ cnt1
 val1
 voctotest
 cnt6
+gator
 
 [veyepar-encoder-nfs-storage]
 
