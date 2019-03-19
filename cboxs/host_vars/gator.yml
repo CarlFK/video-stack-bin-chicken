@@ -1,5 +1,5 @@
 ---
-room_name: electronics_lab
+room_name: pivotal
 
 blackmagic_sources:
 - card: 0

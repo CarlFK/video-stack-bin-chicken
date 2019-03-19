@@ -8,6 +8,7 @@ publisher: ndv
 org: kotlin_chicago
 show: march2019
 room: pivotal
+upload_formats: ['mp4']
 
 time_zone: US/Central
 
@@ -16,8 +17,6 @@ frequency: 60
 # domain:
 
 apt_proxy: true
-
-# apt.enable_oldstable: true
 
 staticips:
   write_hosts: false
@@ -48,8 +47,6 @@ voctomix:
   display_system: x
   framerate: 30
   previews: false
-
-# streaming: null
 
 serial_terminal:
     #- flterm

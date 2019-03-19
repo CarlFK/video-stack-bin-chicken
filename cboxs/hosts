@@ -6,7 +6,6 @@ voctomix
 opsis
 xorg
 veyepar-basic
-veyepar-secrets
 veyepar-encoder-nfs-storage
 rnd
 sugar
@@ -43,20 +42,12 @@ dc10b
 gator
 
 [veyepar-basic]
+gator
 # cnt2
 val1
 val2
 voctotest
 cnt6
-gator
-
-[veyepar-secrets]
-cnt1
-# cnt2
-val1
-voctotest
-cnt6
-gator
 
 [veyepar-encoder-nfs-storage]
 

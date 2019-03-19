@@ -27,6 +27,7 @@
   - pmount
   # for moutning random boxes
   - sshfs
+  - cstream
 
 - name: Create ~/bin and ~/temp dir
   file:
