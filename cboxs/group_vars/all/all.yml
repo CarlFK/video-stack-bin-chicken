@@ -20,7 +20,7 @@ apt_proxy: true
 
 staticips:
   write_hosts: false
-  write_interfaces: true
+  write_interfaces: false
   hosts:
     - hostname: gator
       ip: 10.20.0.20
