@@ -7,7 +7,7 @@ autologin: True
 publisher: ndv
 org: emwc
 show: emwcon_2019
-room: genesys
+room_name: genesys
 
 upload_formats: ['mp4']
 
