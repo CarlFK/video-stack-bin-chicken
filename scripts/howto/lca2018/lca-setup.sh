@@ -1,13 +1,15 @@
 #!/bin/bash -ex
 
-# scp lca-setup.sh lca-setup_eth.cfg juser@gator:
+# scp lca-setup.sh lca-setup_eth.cfg 01-netcfg.yaml juser@gator:
 # sudo mv lca-setup_eth.cfg /etc/network/interfaces.d/
+# sudo mv 01-netcfg.yaml /etc/netplan/
+# sudo netplan apply
 
 # stop vocto
 # stop-all-the-things
 
 # stuff needed cuz minimal install
-sudo apt -y install pmount libx11-6 ifupdown
+sudo apt -y install pmount libx11-6 # ifupdown
 
 # quick copy from local drive of:
 # Vivado and key

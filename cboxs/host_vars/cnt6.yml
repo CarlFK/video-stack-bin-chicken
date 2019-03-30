@@ -10,20 +10,11 @@
 video_disk: /dev/disk/by-path/pci-0000:00:1f.2-ata-1-part1
 
 blackmagic_sources:
-
-# JVC 4k
-- card: 0
-  connection: SDI
-  mode: 17 # (17): HD720 50p        - 720p50
-  audio: true
-
-# Mini JVC, audio from usb audio dongle
 - card: 0
   connection: HDMI
   audio: true
-  mode: 18
 
 sources:
-- JVC
-- Everio
-- Opsis
+- Camera
+- Grabber
+

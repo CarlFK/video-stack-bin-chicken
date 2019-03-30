@@ -5,12 +5,13 @@ user_password_crypted: "$6$khprmotoVWYLZY2W$Gj5Y6p4R.LsXQdL2xf6umhInzZ9GCG6USXB0
 autologin: True
 
 publisher: ndv
-org: kotlin_chicago
-show: march2019
-room: pivotal
+org: emwc
+show: emwcon_2019
+room: genesys
+
 upload_formats: ['mp4']
 
-time_zone: US/Central
+time_zone: US/Pacific
 
 frequency: 60
 
@@ -20,12 +21,12 @@ apt_proxy: true
 
 staticips:
   write_hosts: false
-  write_interfaces: false
+  write_interfaces: true
   hosts:
-    - hostname: gator
+    - hostname: cnt6
       ip: 10.20.0.20
-      mac: 80:3f:5d:08:c3:9f
-      disk: nvme0n1
+      # mac: 80:3f:5d:08:c3:9f
+      # disk: nvme0n1
 
 
 # Git repos:
