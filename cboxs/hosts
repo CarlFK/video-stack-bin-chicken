@@ -47,7 +47,7 @@ gator
 val1
 val2
 voctotest
-cnt6
+# cnt6
 
 [veyepar-encoder-nfs-storage]
 
@@ -56,7 +56,7 @@ cnt6
 nk2
 # cnt1
 # cnt2
-cnt6
+# cnt6
 
 [sugar]
 cnt1
