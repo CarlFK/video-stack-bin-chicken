@@ -16,7 +16,7 @@ conky
 # cnt6
 # pc8
 negk
-trist
+# trist
 
 [nfs-server]
 
@@ -32,7 +32,7 @@ cnt6
 [opsis]
 # cnt6
 # cnt3
-# u2
+trist
 timbot
 
 [xorg]

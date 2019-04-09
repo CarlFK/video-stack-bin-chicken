@@ -5,17 +5,15 @@ user_password_crypted: "$6$khprmotoVWYLZY2W$Gj5Y6p4R.LsXQdL2xf6umhInzZ9GCG6USXB0
 autologin: True
 
 publisher: ndv
-org: emwc
-show: emwcon_2019
-room_name: genesys
+org: pytexas
+show: pytx19
+room_name: ustin_lib
 
 upload_formats: ['mp4']
 
-time_zone: US/Pacific
+time_zone: US/Central
 
 frequency: 60
-
-# domain:
 
 apt_proxy: true
 

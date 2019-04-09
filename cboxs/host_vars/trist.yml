@@ -7,3 +7,7 @@ eth_local_ip_gateway: 192.168.1.1
 dhcp_range: 192.168.1.100,192.168.1.200,6h
 domain: private.lan
 
+voctomix:
+  host: gator
+  port: 10001
+
