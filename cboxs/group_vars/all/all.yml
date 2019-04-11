@@ -30,6 +30,8 @@ time_zone: US/Central
 
 frequency: 60
 
+domain: home
+
 apt_proxy: true
 
 staticips:
