@@ -13,72 +13,60 @@ conky
 
 
 [tftp-dhcp-server]
-# cnt6
-# pc8
 negk
-# trist
 
 [nfs-server]
 
 [voctomix]
 gator
-dc10b
 cnt1
 cnt5
 cnt6
-# cnt7
 # voctotest
 
 [opsis]
-# cnt6
-# cnt3
+dc10b
+odroid2
+odroid3
 trist
 timbot
 
 [xorg]
-# cnt6
-# u2
 dc10b
 gator
 
 [veyepar-basic]
 gator
-# cnt2
 val1
 val2
-voctotest
-# cnt6
 
 [veyepar-encoder-nfs-storage]
 
 
 [rnd]
 nk2
-# cnt1
-# cnt2
-# cnt6
+gator
 
 [sugar]
+dc10b
 cnt1
 cnt2
 cnt6
 val1
 bb4
-dc10b
 u2
 gator
 bb5
 bb7
 
 [conky]
+dc10b
 cnt1
 cnt2
 cnt6
 bb4
-dc10b
 u2
 gator
 bb5
 bb7
-
 

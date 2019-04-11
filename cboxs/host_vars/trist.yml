@@ -11,3 +11,5 @@ voctomix:
   host: gator
   port: 10001
 
+alsa_device: hw:1,0
+

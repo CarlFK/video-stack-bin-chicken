@@ -16,12 +16,15 @@ box=$2
 inv_repo=video-stack-bin-chicken
 # inv_repo=ansible
 # inv_repo=av-foss-stack
+    # video-stack-bin-chicken/site.yml \
+
+inventory_file=${inv_repo}/${inv_dir}/hosts
+grep ${box} ${inventory_file}
 
 ansible-playbook \
     -vv \
     ansible/site.yml \
-    video-stack-bin-chicken/site.yml \
-    --inventory-file ${inv_repo}/${inv_dir}/hosts  \
+    --inventory-file ${inventory_file} \
     --limit $box \
     --user root \
     --diff \

@@ -7,7 +7,7 @@ autologin: True
 publisher: ndv
 org: pytexas
 show: pytx19
-room_name: ustin_lib
+room_name: special_event_center #austin_lib
 
 upload_formats: ['mp4']
 
@@ -48,9 +48,9 @@ voctomix:
   previews: false
 
 serial_terminal:
-    #- flterm
-- cu
 - tio
+- cu
+#- flterm
 
 sources:
 - Camera

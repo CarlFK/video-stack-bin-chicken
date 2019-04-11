@@ -1,5 +1,6 @@
 ---
-static_ip: 10.42.0.12
 voctomix:
-  host: 10.42.0.10
+  host: gator
   port: 10001
+
+alsa_device: hw:1
