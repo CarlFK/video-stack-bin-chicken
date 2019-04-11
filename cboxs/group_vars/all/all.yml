@@ -20,7 +20,8 @@ irc:
   global_channels:
   - "#TimVideos"
   - "#PumpingStationOne"
-irc_room_channel: ""
+
+irc_room_channel: "PyTexas"
 irc_nick: CboxX
 
 upload_formats: ['mp4']
@@ -32,13 +33,17 @@ frequency: 60
 apt_proxy: true
 
 staticips:
-  write_hosts: false
+  write_hosts: true
   write_interfaces: true
   hosts:
     - hostname: cnt6
       ip: 10.20.0.20
       # mac: 80:3f:5d:08:c3:9f
       # disk: nvme0n1
+    - hostname: odroid3
+      ip: 10.20.0.21
+    - hostname: dc10b
+      ip: 10.20.0.22
 
 
 # Git repos:
