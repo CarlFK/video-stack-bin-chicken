@@ -28,6 +28,8 @@
   # for moutning random boxes
   - sshfs
   - cstream
+  # hdmi2usb bandwith monitor
+  # https://github.com/aguinet/usbtop
 
 - name: Create ~/bin and ~/temp dir
   file:
@@ -53,6 +55,8 @@
     # - [timvideos, HDMI2USB-firmware-prebuilt]
   - [CarlFK, clocky]
   - [CarlFK, voctomix-outcasts]
+  - [aguinet, usbtop]
+
 
 - lineinfile:
     path: /home/{{ user_name }}/.bashrc
