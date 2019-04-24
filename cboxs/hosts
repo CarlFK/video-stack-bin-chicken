@@ -13,7 +13,7 @@ conky
 
 
 [tftp-dhcp-server]
-negk
+# negk
 
 [nfs-server]
 
@@ -25,15 +25,13 @@ cnt6
 # voctotest
 
 [opsis]
-dc10b
 odroid2
 odroid3
 trist
 timbot
 
-[xorg]
+[test-station]
 dc10b
-gator
 
 [veyepar-basic]
 gator

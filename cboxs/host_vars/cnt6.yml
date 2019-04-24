@@ -1,7 +1,7 @@
 ---
 # eth_local_mac_address: c8:60:00:6a:13:bd
 
-# room_name: ps1
+room_name: lc
 
 # static_ip: 10.42.0.20
 # domain: private.lan

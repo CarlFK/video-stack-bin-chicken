@@ -5,9 +5,8 @@ user_password_crypted: "$6$khprmotoVWYLZY2W$Gj5Y6p4R.LsXQdL2xf6umhInzZ9GCG6USXB0
 autologin: True
 
 publisher: ndv
-org: pytexas
-show: pytx19
-room_name: special_event_center #austin_lib
+org: analog_life
+show: kicon_2019
 
 streaming:
   method: null
@@ -38,14 +37,19 @@ staticips:
   write_hosts: true
   write_interfaces: true
   hosts:
-    - hostname: cnt6
+
+    - hostname: gator
       ip: 10.20.0.20
-      # mac: 80:3f:5d:08:c3:9f
-      # disk: nvme0n1
     - hostname: odroid3
       ip: 10.20.0.21
+
+    - hostname: cnt6
+      ip: 10.20.0.30
+    - hostname: odroid3
+      ip: 10.20.0.31
+
     - hostname: dc10b
-      ip: 10.20.0.22
+      ip: 10.20.0.3
 
 
 # Git repos:

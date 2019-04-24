@@ -1,5 +1,5 @@
 ---
-room_name: pivotal
+room_name: main
 
 blackmagic_sources:
 - card: 0
