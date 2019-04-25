@@ -19,10 +19,8 @@ conky
 
 [voctomix]
 gator
-cnt1
-cnt5
+cnt2
 cnt6
-# voctotest
 
 [opsis]
 odroid2
@@ -34,7 +32,7 @@ dc10b
 trist
 
 [veyepar-basic]
-gator
+# gator
 val1
 val2
 
@@ -43,7 +41,7 @@ val2
 
 [rnd]
 nk2
-gator
+# gator
 
 [sugar]
 dc10b
