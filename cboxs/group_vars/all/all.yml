@@ -34,13 +34,13 @@ domain: home
 apt_proxy: true
 
 staticips:
-  write_hosts: true
-  write_interfaces: true
+  write_hosts: false
+  write_interfaces: false
   hosts:
 
     - hostname: gator
       ip: 10.20.0.20
-    - hostname: odroid3
+    - hostname: odroid1
       ip: 10.20.0.21
 
     - hostname: cnt6
@@ -57,7 +57,8 @@ playbook_repo: https://salsa.debian.org/debconf-video-team/ansible
 # playbook_repo: https://github.com/CarlFK/video-stack-deploy.git
 playbook_branch: master
 
-inventory_repo: https://github.com/CarlFK/video-stack-inventory.git
+# inventory_repo: https://github.com/CarlFK/video-stack-inventory.git
+inventory_repo: https://github.com/CarlFK/video-stack-bin-chicken.git
 inventory_repo_dir: cboxs
 
 blackmagic:
