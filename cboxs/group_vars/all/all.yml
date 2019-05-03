@@ -5,8 +5,8 @@ user_password_crypted: "$6$khprmotoVWYLZY2W$Gj5Y6p4R.LsXQdL2xf6umhInzZ9GCG6USXB0
 autologin: True
 
 publisher: ndv
-org: analog_life
-show: kicon_2019
+org: fossi
+show: latch_2019
 
 streaming:
   method: null
@@ -25,7 +25,7 @@ irc_nick: CboxX
 
 upload_formats: ['mp4']
 
-time_zone: US/Central
+time_zone: US/Los Angeles
 
 frequency: 60
 
