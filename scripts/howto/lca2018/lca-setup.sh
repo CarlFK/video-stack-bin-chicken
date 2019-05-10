@@ -18,6 +18,7 @@ sudo apt -y install pmount libx11-6 # ifupdown
 if [[ -z $xdisk || -z $nic ]]; then
   set +x
   echo set xdisk and nic:
+  echo vim ~/.bashrc
   echo export xdisk=sda1
   echo export nic=enp3s0 enp0s31f6
   exit
