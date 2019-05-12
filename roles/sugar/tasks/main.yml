@@ -2,34 +2,49 @@
 
 - name: install R&D related packages
   apt:
-    name: "{{ item }}"
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - git
+      - vim
+        # - vizzini-dkms
+      # for mode-switch:
+        # - flterm
+      - tio
+      # hwinfo --monitor shows   Model: "HDMI2USB-2"
+      - hwinfo
+        # help carl reimage
+      # for testing
+      - mplayer
+      # to display hdmi2usb
+      - gstreamer1.0-plugins-base
+      - gstreamer1.0-plugins-bad
+      - gstreamer1.0-plugins-ugly
+      - gstreamer1.0-plugins-good
+      - gstreamer1.0-tools
+      - python-wxgtk3.0
+      # for moutning random usb drives
+      - pmount
+      # for moutning random boxes
+      - sshfs
+      - cstream
+      # hdmi2usb bandwith monitor
+      # https://github.com/aguinet/usbtop
+
+- name: install grub-ipxe on Ubuntu
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+      - grub-ipxe
+  when: ansible_distribution == 'Ubuntu'
+
+- name: install grub-ipxe on Debian
+  apt:
+    deb: "{{ item }}"
   with_items:
-  - git
-  - vim
-    # - vizzini-dkms
-  # for mode-switch:
-    # - flterm
-  - tio
-  # hwinfo --monitor shows   Model: "HDMI2USB-2"
-  - hwinfo
-    # help carl reimage
-    # - grub-ipxe
-  # for testing
-  - mplayer
-  # to display hdmi2usb
-  - gstreamer1.0-plugins-base
-  - gstreamer1.0-plugins-bad
-  - gstreamer1.0-plugins-ugly
-  - gstreamer1.0-plugins-good
-  - gstreamer1.0-tools
-  - python-wxgtk3.0
-  # for moutning random usb drives
-  - pmount
-  # for moutning random boxes
-  - sshfs
-  - cstream
-  # hdmi2usb bandwith monitor
-  # https://github.com/aguinet/usbtop
+    - https://launchpad.net/ubuntu/+archive/primary/+files/grub-ipxe_1.0.0+git-20190109.133f4c4-0ubuntu2_all.deb
+  when: ansible_distribution == 'Debian'
 
 - name: Create ~/bin and ~/temp dir
   file:
