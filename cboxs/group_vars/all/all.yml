@@ -25,7 +25,7 @@ irc_nick: CboxX
 
 upload_formats: ['mp4']
 
-time_zone: US/Los Angeles
+time_zone: US/Chicago
 
 frequency: 60
 
@@ -63,16 +63,19 @@ inventory_repo_dir: cboxs
 
 blackmagic:
     urls:
-    - desktopvideo: http://pc8/bm/Blackmagic_Desktop_Video_Linux_11.1/deb/x86_64/desktopvideo_11.1a11_amd64.deb
-    - desktopvideo_gui: http://pc8/bm/Blackmagic_Desktop_Video_Linux_11.1/deb/x86_64/desktopvideo-gui_11.1a11_amd64.deb
-    - mediaexpress: http://pc8/bm/Blackmagic_Desktop_Video_Linux_11.1/deb/x86_64/mediaexpress_3.5.9a10_amd64.deb
-    - scanner: http://pc8/bm/Blackmagic_Desktop_Video_Linux_11.1/deb/x86_64/desktopvideo-scanner_11.1a11_amd64.deb
-    dkms_version: 11.1a11
+    - desktopvideo: http://pc8/bm/Blackmagic_Desktop_Video_Linux_11.2/deb/x86_64/desktopvideo_11.2a8_amd64.deb
+    - desktopvideo_gui: http://pc8/bm/Blackmagic_Desktop_Video_Linux_11.2/deb/x86_64/desktopvideo-gui_11.2a8_amd64.deb
+    - mediaexpress: http://pc8/bm/Blackmagic_Desktop_Video_Linux_11.2/deb/x86_64/mediaexpress_3.5.9a10_amd64.deb
+    - scanner: http://pc8/bm/Blackmagic_Desktop_Video_Linux_11.2/deb/x86_64/desktopvideo-scanner_11.2a8_amd64.deb
+    dkms_version: 11.2a8
 
 voctomix:
   display_system: x
   framerate: 30
   previews: false
+  autostart_gui: false
+  loop_url: http://pc8/assets/loop.ts
+
 
 serial_terminal:
 - tio

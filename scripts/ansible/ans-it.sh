@@ -23,6 +23,16 @@ grep ${box} ${inventory_file}
 ansible-playbook \
     -vv \
     ansible/site.yml \
+    --inventory-file ${inventory_file} \
+    --limit $box \
+    --user root \
+    $3 $4
+
+exit
+
+ansible-playbook \
+    -vv \
+    ansible/site.yml \
     video-stack-bin-chicken/site.yml \
     --inventory-file ${inventory_file} \
     --limit $box \

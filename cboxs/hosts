@@ -18,6 +18,7 @@ conky
 [voctomix]
 gator
 cnt2
+cnt5
 cnt6
 
 [opsis]
@@ -48,6 +49,7 @@ nk2
 dc10b
 cnt1
 cnt2
+cnt5
 cnt6
 val1
 bb4
@@ -61,6 +63,7 @@ negk
 dc10b
 cnt1
 cnt2
+cnt5
 cnt6
 bb4
 u2

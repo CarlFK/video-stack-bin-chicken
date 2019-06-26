@@ -1,16 +1,18 @@
 ---
-room_name: ps1
+room_name: hayscape
 
-static_ip: 10.42.0.10
+# static_ip: 10.42.0.10
 # domain: private.lan
 
 # video_disk: /dev/sda1
 
+blackmagic_default_mode: 720p5994
+
 blackmagic_sources:
 # JVC 4k
 - card: 0
-  connection: SDI
-  mode: 17 # (17): HD720 50p        - 720p50
+  connection: hdmi
+  mode: 720p5994
   audio: true
 
 # Mini JVC, audio from usb audio dongle
@@ -18,6 +20,7 @@ blackmagic_sources:
 #   connection: HDMI
 #   audio: true
 #   mode: 18
+# mode: 17 # (17): HD720 50p        - 720p50
 #   alsa_device: hw:1,0
 #  audio_delay: 1000
 
