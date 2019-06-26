@@ -43,6 +43,9 @@ staticips:
     - hostname: odroid1
       ip: 10.20.0.21
 
+    - hostname: cnt5
+      ip: 10.20.0.20
+
     - hostname: cnt6
       ip: 10.20.0.30
     - hostname: odroid3
