@@ -35,7 +35,7 @@ apt_proxy: true
 
 staticips:
   write_hosts: false
-  write_interfaces: false
+  write_interfaces: true
   hosts:
 
     - hostname: gator

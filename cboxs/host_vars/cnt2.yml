@@ -1,15 +1,15 @@
-room_name: EmporiumChicago
+room_name: suzanne_scharer
 
 # video_disk: /dev/sda1
 # video_disk: /dev/disk/by-path/pci-0000:00:1f.2-ata-1-part1
 
-sources:
-- DV1
-- DV2
-- Sony
-- Everio
+blackmagic_sources:
+- card: 0
+  connection: hdmi
+  mode: 720p5994
+  audio: true
 
-ingest_sources:
+xingest_sources:
 - description: "DV cam 1"
   video-source: dv
   video-attribs:

@@ -4,12 +4,8 @@ room_name: hayscape
 # static_ip: 10.42.0.10
 # domain: private.lan
 
-# video_disk: /dev/sda1
-
-blackmagic_default_mode: 720p5994
-
 blackmagic_sources:
-# JVC 4k
+# Panasonic
 - card: 0
   connection: hdmi
   mode: 720p5994
@@ -25,6 +21,6 @@ blackmagic_sources:
 #  audio_delay: 1000
 
 sources:
-- JVC
+- Cam
 - Grabber
   # - Everio
