@@ -20,6 +20,7 @@ gator
 cnt2
 cnt5
 cnt6
+val1
 
 [opsis]
 odroid1
@@ -34,8 +35,6 @@ negk
 
 [veyepar-basic]
 # gator
-val1
-val2
 cnt2
 
 [veyepar-encoder-nfs-storage]
@@ -71,3 +70,4 @@ gator
 bb5
 bb7
 negk
+val1
