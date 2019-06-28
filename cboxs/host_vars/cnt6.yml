@@ -1,7 +1,7 @@
 ---
 # eth_local_mac_address: c8:60:00:6a:13:bd
 
-room_name: noilme
+room_name: cartoon2
 
 # static_ip: 10.42.0.20
 # domain: private.lan
@@ -9,10 +9,10 @@ room_name: noilme
 # video_disk: /dev/sda1
 video_disk: /dev/disk/by-path/pci-0000:00:1f.2-ata-1-part1
 
-
-xblackmagic_sources:
+blackmagic_sources:
 - card: 0
   connection: HDMI
+  mode: 720p5994
   audio: true
 
 sources:
