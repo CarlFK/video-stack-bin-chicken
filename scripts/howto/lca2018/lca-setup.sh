@@ -80,7 +80,7 @@ fi
 cd litex-buildenv
 git pull
 
-export CPU=or1k CPU_VARIANT= PLATFORM=arty TARGET=net FIRMWARE=firmware
+export CPU=mor1kx CPU_VARIANT= PLATFORM=arty TARGET=net FIRMWARE=firmware
 ./scripts/download-env.sh
 source ./scripts/enter-env.sh
 
@@ -96,7 +96,7 @@ echo 1 hdmi2usb on qemu
 
 sudo apt-get -y install build-essential libncurses5-dev gcc make git exuberant-ctags bc libssl-dev
 
-export CPU=or1k CPU_VARIANT=linux PLATFORM=arty TARGET=net FIRMWARE=linux
+export CPU=mor1kx CPU_VARIANT=linux PLATFORM=arty TARGET=net FIRMWARE=linux
 ./scripts/build-linux.sh
 
 make image
@@ -116,7 +116,7 @@ sudo dmesg --read-clear
 
 echo Now on arty
 
-export CPU=or1k CPU_VARIANT=linux PLATFORM=arty TARGET=net FIRMWARE=firmware
+export CPU=mor1kx CPU_VARIANT=linux PLATFORM=arty TARGET=net FIRMWARE=firmware
 
 # conda upgrade gcc-${CPU}-elf-newlib
 # conda upgrade flterm
@@ -139,7 +139,7 @@ make gateware-load
 
 make firmware-connect
 
-export CPU=or1k CPU_VARIANT=linux PLATFORM=arty TARGET=net FIRMWARE=linux
+export CPU=mor1kx CPU_VARIANT=linux PLATFORM=arty TARGET=net FIRMWARE=linux
 make gateware
 ./scripts/build-linux.sh
 
@@ -149,9 +149,6 @@ make tftp
 
 # boot linux on Arty
 make gateware-load
-
-conda upgrade gcc-${CPU}-elf-newlib
-conda upgrade flterm
 
 echo cat "/proc/cpuinfo"
 echo cpu "architecture    : OpenRISC 1000 (1.1-rev0)"
