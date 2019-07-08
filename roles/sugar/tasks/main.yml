@@ -30,6 +30,7 @@
       - cstream
       # hdmi2usb bandwith monitor
       # https://github.com/aguinet/usbtop
+      - memtest86+
 
 - name: install grub-ipxe on Ubuntu
   apt:

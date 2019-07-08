@@ -6,6 +6,4 @@ blackmagic_sources:
   connection: HDMI
   audio: true
 
-sources:
-- Camera
-- Grabber
+# alsa_device: hw:1

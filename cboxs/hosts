@@ -16,17 +16,18 @@ conky
 [nfs-server]
 
 [voctomix]
-gator
 cnt2
 cnt5
 cnt6
 val1
+gator
 
 [opsis]
 odroid1
 odroid2
 odroid3
-timbot
+tbot1
+dell04
 
 [test-station]
 dc10b
@@ -34,15 +35,14 @@ trist
 negk
 
 [veyepar-basic]
-# gator
-cnt2
+# cnt2
 
 [veyepar-encoder-nfs-storage]
 
 
 [rnd]
 nk2
-# gator
+dell04
 
 [sugar]
 dc10b
@@ -71,3 +71,4 @@ bb5
 bb7
 negk
 val1
+dell04

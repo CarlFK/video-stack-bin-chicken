@@ -5,8 +5,9 @@ user_password_crypted: "$6$khprmotoVWYLZY2W$Gj5Y6p4R.LsXQdL2xf6umhInzZ9GCG6USXB0
 autologin: True
 
 publisher: ndv
-org: fossi
-show: latch_2019
+org: pyohio
+show: pyohio_2019
+# room_name: change_me
 
 streaming:
   method: null
@@ -25,7 +26,7 @@ irc_nick: CboxX
 
 upload_formats: ['mp4']
 
-time_zone: US/Chicago
+time_zone: America/Chicago
 
 frequency: 60
 
