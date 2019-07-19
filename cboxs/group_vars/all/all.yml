@@ -7,7 +7,6 @@ autologin: True
 publisher: ndv
 org: pyohio
 show: pyohio_2019
-# room_name: change_me
 
 streaming:
   method: null
@@ -23,7 +22,7 @@ irc:
 
 upload_formats: ['mp4']
 
-time_zone: America/Eastern
+time_zone: America/New_York
 
 frequency: 60
 
