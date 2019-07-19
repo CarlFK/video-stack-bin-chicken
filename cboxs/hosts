@@ -17,10 +17,12 @@ negk
 [nfs-server]
 
 [voctomix]
+cnt1
 cnt2
+cnt3
+cnt4
 cnt5
 cnt6
-val1
 gator
 
 [opsis]
@@ -28,7 +30,6 @@ odroid1
 odroid2
 odroid3
 tbot1
-dell04
 
 [test-station]
 # dc10b

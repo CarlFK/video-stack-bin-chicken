@@ -1,6 +1,8 @@
 ---
 room_name: hayscape
 
+video_disk: /dev/sdb1
+
 # static_ip: 10.42.0.10
 # domain: private.lan
 
