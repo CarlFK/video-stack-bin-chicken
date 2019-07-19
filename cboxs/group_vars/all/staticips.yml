@@ -40,3 +40,4 @@ staticips:
   - hostname: cnt7
     ip: 10.20.0.70
     mac: c8:60:00:6d:8d:ca
+    disk: /dev/sdb
