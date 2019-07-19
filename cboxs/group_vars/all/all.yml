@@ -58,7 +58,7 @@ voctomix:
   framerate: 30
   previews: false
   autostart_gui: false
-  loop_url: http://pc8/assets/loop.ts
+  loop_url: None
 
 
 serial_terminal:
