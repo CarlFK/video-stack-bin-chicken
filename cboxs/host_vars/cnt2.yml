@@ -1,5 +1,6 @@
 room_name: suzanne_scharer
 
+disk: /dev/sdf
 video_disk: /dev/sda1
 # video_disk: /dev/disk/by-path/pci-0000:00:1f.2-ata-1-part1
 
