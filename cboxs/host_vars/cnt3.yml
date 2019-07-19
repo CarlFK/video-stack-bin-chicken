@@ -1,4 +1,4 @@
 ---
-room_name: hayscape
+room_name: lab
 
-video_disk: /dev/sda1
+disk: /dev/sda
