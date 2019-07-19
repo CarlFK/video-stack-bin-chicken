@@ -1,28 +1,4 @@
 ---
-room_name: hayscape
+room_name:  cartoon2
 
 video_disk: /dev/sda1
-
-# static_ip: 10.42.0.10
-# domain: private.lan
-
-blackmagic_sources:
-# Panasonic
-- card: 0
-  connection: hdmi
-  mode: 720p5994
-  audio: true
-
-# Mini JVC, audio from usb audio dongle
-# - card: 1
-#   connection: HDMI
-#   audio: true
-#   mode: 18
-# mode: 17 # (17): HD720 50p        - 720p50
-#   alsa_device: hw:1,0
-#  audio_delay: 1000
-
-sources:
-- Cam
-- Grabber
-  # - Everio

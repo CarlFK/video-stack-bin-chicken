@@ -21,12 +21,9 @@ irc:
   - "#TimVideos"
   - "#PumpingStationOne"
 
-irc_room_channel: "PyTexas"
-irc_nick: CboxX
-
 upload_formats: ['mp4']
 
-time_zone: America/Chicago
+time_zone: America/Eastern
 
 frequency: 60
 
@@ -43,7 +40,13 @@ playbook_branch: master
 inventory_repo: https://github.com/CarlFK/video-stack-bin-chicken.git
 inventory_repo_dir: cboxs
 
-blackmagic_default_mode: 720p5994
+
+voctomix:
+  display_system: x
+  framerate: 30
+  previews: false
+  autostart_gui: false
+  # loop_url: None
 
 blackmagic:
     urls:
@@ -53,13 +56,13 @@ blackmagic:
         # scanner: http://negk/blackmagic/Blackmagic_Desktop_Video_Linux_11.2/deb/x86_64/desktopvideo-scanner_11.2a8_amd64.deb
     dkms_version: 11.2a8
 
-voctomix:
-  display_system: x
-  framerate: 30
-  previews: false
-  autostart_gui: false
-  # loop_url: None
+blackmagic_default_mode: 720p5994
 
+blackmagic_sources:
+- card: 0
+  connection: hdmi
+  mode: 720p5994
+  audio: true
 
 serial_terminal:
 - tio
