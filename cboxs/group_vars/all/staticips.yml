@@ -38,5 +38,5 @@ staticips:
     mac: c8:60:00:6a:13:bd
 
   - hostname: cnt7
-    ip: 10.20.0.60
+    ip: 10.20.0.70
     mac: c8:60:00:6d:8d:ca
