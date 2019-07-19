@@ -34,28 +34,6 @@ domain: home
 
 apt_proxy: true
 
-staticips:
-  write_hosts: false
-  write_interfaces: true
-  hosts:
-
-    - hostname: gator
-      ip: 10.20.0.20
-    - hostname: odroid1
-      ip: 10.20.0.21
-
-    - hostname: cnt5
-      ip: 10.20.0.20
-
-    - hostname: cnt6
-      ip: 10.20.0.30
-    - hostname: odroid3
-      ip: 10.20.0.31
-
-    - hostname: dc10b
-      ip: 10.20.0.3
-
-
 # Git repos:
 playbook_repo: https://salsa.debian.org/debconf-video-team/ansible
 # playbook_repo: https://github.com/CarlFK/video-stack-deploy.git
@@ -101,7 +79,7 @@ rsync_excludes:
 - 2*.ts.wav.png
 
 # what the pxe server can install
-ubuntu_suites: [trusty, xenial, artful, bionic, ]
+ubuntu_suites: []
 
 veyepar_url: http://veyepar.nextdayvideo.com
 

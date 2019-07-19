@@ -11,7 +11,8 @@ conky
 
 
 [tftp-dhcp-server]
-# negk
+dc10b
+negk
 
 [nfs-server]
 
@@ -30,9 +31,8 @@ tbot1
 dell04
 
 [test-station]
-dc10b
+# dc10b
 trist
-negk
 
 [veyepar-basic]
 # cnt2
@@ -45,7 +45,7 @@ nk2
 dell04
 
 [sugar]
-dc10b
+# dc10b
 cnt1
 cnt2
 cnt5
@@ -56,10 +56,10 @@ u2
 gator
 bb5
 bb7
-negk
+# negk
 
 [conky]
-dc10b
+# dc10b
 cnt1
 cnt2
 cnt5
@@ -69,6 +69,5 @@ u2
 gator
 bb5
 bb7
-negk
 val1
 dell04
