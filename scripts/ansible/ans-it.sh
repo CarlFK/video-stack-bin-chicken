@@ -23,9 +23,18 @@ grep ${box} ${inventory_file}
 ansible-playbook \
     -vv \
     ansible/site.yml \
+    video-stack-bin-chicken/site.yml \
     --inventory-file ${inventory_file} \
     --limit $box \
     --user root \
+    --diff \
+    --vault-password-file vault-sec.txt \
+    --extra-vars="{ \
+'veyepar_confs': '/home/carl/src/veyepar', \
+'veyepar_assets': '/home/carl/Videos/veyepar', \
+'veyepar_url': 'http://veyepar.nextdayvideo.com', \
+'vault_pw': '',  \
+'ansible_python_interpreter': '/usr/bin/python3'}" \
     $3 $4
 
 exit
@@ -33,17 +42,13 @@ exit
 ansible-playbook \
     -vv \
     ansible/site.yml \
-    video-stack-bin-chicken/site.yml \
     --inventory-file ${inventory_file} \
     --limit $box \
     --user root \
-    --diff \
-    --vault-password-file vault-sec.txt \
-    --extra-vars="{'veyepar_confs': '/home/carl/src/veyepar', 'veyepar_assets': '/home/carl/Videos/veyepar', 'vault_pw': '', 'ansible_python_interpreter': '/usr/bin/python3'}" \
     $3 $4
 
+exit
 
-# 'veyepar_url': 'http://veyepar.nextdayvideo.com',
 
     # --become-user videoteam --become --ask-become-pass \
     # --start-at-task="rnd : git clone bunch of things"
