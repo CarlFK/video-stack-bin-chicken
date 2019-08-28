@@ -1,7 +1,7 @@
 ---
 staticips:
-  write_hosts: true
-  write_interfaces: true
+  write_hosts: false
+  write_interfaces: false
   hosts:
   - hostname: negk
     ip: 10.20.0.1
