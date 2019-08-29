@@ -67,6 +67,7 @@ ${color CC9900}HOST $nodename ${hr 2}$color
 # $sysname $kernel on $machine
 # Total CPU: ${cpu cpu0}%
 # ${color 597DB2}${cpubar}$color
+Uptime: ${uptime}
 ${cpugraph 000000 597DB2}
 Core 0: ${freq 1} MHz    ${cpu cpu1}% ${color 597DB2}${cpubar cpu1}$color
 Core 1: ${freq 2} MHz    ${cpu cpu2}% ${color 597DB2}${cpubar cpu2}$color
@@ -87,17 +88,20 @@ RAM: $memperc%  ${color FF6600} ${membar 6}$color
 Swap: $swapperc%   ${color FF6600} ${swapbar 6}$color
 \
 / ${fs_type} ${fs_size} ${fs_free_perc /}% ${color FFFF33} ${fs_bar 6 /}$color
-/srv/video/ ${fs_type /srv/video} ${fs_size /srv/video} ${fs_free_perc /srv/video}% ${color FFFF33} ${fs_bar 6 /srv/video}$color
+${if_mounted /srv/video/} /srv/video/ ${fs_type /srv/video} ${fs_size /srv/video} ${fs_free_perc /srv/video}% ${color FFFF33} ${fs_bar 6 /srv/video}$color ${endif}
+
+
 Read: ${diskio_read}${tab 60}${diskiograph_read 25,250} ${alignr}Write: ${diskio_write} ${diskiograph_write 25,250}
-${color CC9900}{{ ansible_default_ipv4.interface }} ${addr {{ ansible_default_ipv4.interface }}} ${hr 2}$color ${cat /sys/class/net/{{ ansible_default_ipv4.interface }}/speed}
+${color CC9900}{{ ansible_default_ipv4.interface }} ${addr {{ ansible_default_ipv4.interface }}} ${if_match ${exec cat /sys/class/net/{{ ansible_default_ipv4.interface }}/speed}!=1000} ${color FF0000} ${endif} (${exec cat /sys/class/net/{{ ansible_default_ipv4.interface }}/speed} Mbps) ${hr 2}$color
 Down: $color${downspeed {{ ansible_default_ipv4.interface }}} k/s ${tab 60}${downspeedgraph {{ ansible_default_ipv4.interface }} 25,250 000000 ff0000} ${alignr}Up: ${upspeed {{ ansible_default_ipv4.interface }}} k/s ${upspeedgraph {{ ansible_default_ipv4.interface }} 25,250 000000 00ff00}$color
 # Total: ${totaldown {{ ansible_default_ipv4.interface }}} ${alignr}Total: ${totalup {{ ansible_default_ipv4.interface }}}
 Inbound: ${tcp_portmon 1 32767 count} Outbound: ${tcp_portmon 32768 61000 count}${alignr}Total: ${tcp_portmon 1 65535 count}
 \
-${color CC9900}/var/log/syslog ${hr 2}$color
+# ${color CC9900}/var/log/syslog ${hr 2}$color
 # ${color 339900}${execi 30 tail -n 9 /var/log/syslog | fold -w 80}$color
 # ${execi 30 tail -n 9 /var/log/syslog | fold -w 90}$color
 # ${exec dmesg | tail -n 9 | fold -w 90}$color
-${tail /var/log/syslog 5}$color
-
+# ${tail /var/log/syslog 5}$color
+${user_number}
+${user_names}
 ]];
