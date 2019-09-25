@@ -21,8 +21,12 @@
       - gstreamer1.0-plugins-bad
       - gstreamer1.0-plugins-ugly
       - gstreamer1.0-plugins-good
+      - gstreamer1.0-libav
+      - frei0r-plugins
       - gstreamer1.0-tools
       - python-wxgtk3.0
+      # for making python venvs
+      - python3-venv
       # for moutning random usb drives
       - pmount
       # for moutning random boxes
