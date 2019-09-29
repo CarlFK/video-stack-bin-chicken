@@ -8,6 +8,7 @@ veyepar-encoder-nfs-storage
 rnd
 sugar
 conky
+streamon
 
 
 [tftp-dhcp-server]
@@ -38,7 +39,7 @@ odroid9
 tbot1
 # pdp11
 
-[stream-monitor]
+[streamon]
 pdp11
 
 [test-station]
@@ -68,7 +69,7 @@ gator
 bb5
 bb7
 # negk
-# pdp11
+pdp11
 
 [conky]
 # dc10b
@@ -83,4 +84,4 @@ bb5
 bb7
 val1
 dell04
-# pdp11
+pdp11

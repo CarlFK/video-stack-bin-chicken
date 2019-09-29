@@ -1,0 +1,8 @@
+ethtool eth0
+Speed: 1000Mb/s
+(needs to know what the interface name is.)
+
+show IP on login banner so that I don't need to log in to see the IP
+show all the IPs :p
+
+
