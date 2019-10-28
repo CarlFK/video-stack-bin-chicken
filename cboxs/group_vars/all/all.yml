@@ -13,13 +13,14 @@ streaming:
   method: null
 
 irc:
-  autostart: false
   network: freenode
   server: irc.freenode.net
   ssl_port: 6697
   global_channels:
   - "#TimVideos"
   - "#PumpingStationOne"
+
+irc_autostart: false
 
 upload_formats: ['mp4']
 
