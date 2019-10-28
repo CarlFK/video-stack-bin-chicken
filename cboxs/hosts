@@ -1,3 +1,6 @@
+[onsite]
+bare
+
 [onsite:children]
 tftp-dhcp-server
 nfs-server
