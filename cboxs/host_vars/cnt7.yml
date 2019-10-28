@@ -1,4 +1,6 @@
 ---
-room_name: spare
+org: nbpy
+show: nbpy19
+room_name: mystic
 
 disk: /dev/sda
