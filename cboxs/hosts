@@ -13,6 +13,8 @@ sugar
 conky
 streamon
 
+[diag]
+cnt1
 
 [tftp-dhcp-server]
 negk
@@ -45,6 +47,7 @@ tbot1
 [streamon]
 pdp11
 jd
+smpi.local
 
 [test-station]
 # dc10b
@@ -81,6 +84,7 @@ cnt1
 cnt2
 cnt5
 cnt6
+cnt7
 bb4
 u2
 gator
