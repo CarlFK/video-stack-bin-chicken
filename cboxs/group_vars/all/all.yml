@@ -5,9 +5,9 @@ user_password_crypted: "$6$khprmotoVWYLZY2W$Gj5Y6p4R.LsXQdL2xf6umhInzZ9GCG6USXB0
 autologin: True
 
 publisher: ndv
-org: koya_law
-show: rework1
-room_name: room_1
+org: lca
+show: lca2020
+# room_name: room_1
 
 streaming:
   method: null
@@ -24,7 +24,7 @@ irc_autostart: false
 
 upload_formats: ['mp4']
 
-time_zone: America/Pacific
+time_zone: America/Chicago
 
 frequency: 60
 
@@ -41,8 +41,10 @@ playbook_branch: master
 inventory_repo: https://github.com/CarlFK/video-stack-bin-chicken.git
 inventory_repo_dir: cboxs
 
-
 voctomix:
+  host: localhost
+  port: 10002
+  mirrors: true
   display_system: x
   framerate: 30
   previews: false
@@ -51,11 +53,11 @@ voctomix:
 
 blackmagic:
     urls:
-    - http://pc8/blackmagic/Blackmagic_Desktop_Video_Linux_11.4/deb/x86_64/desktopvideo_11.4a14_amd64.deb
-    - http://pc8/blackmagic/Blackmagic_Desktop_Video_Linux_11.4/deb/x86_64/desktopvideo-gui_11.4a14_amd64.deb
-    - http://pc8/blackmagic/Blackmagic_Desktop_Video_Linux_11.4/deb/x86_64/mediaexpress_3.6a13_amd64.deb
-    - http://pc8/blackmagic/Blackmagic_Desktop_Video_Linux_11.4/deb/x86_64/desktopvideo-scanner_11.4a14_amd64.deb
-    dkms_version: 11.4a14
+    - http://pc8/blackmagic/Blackmagic_Desktop_Video_Linux_11.6/deb/x86_64/desktopvideo_11.6a26_amd64.deb
+    - http://pc8/blackmagic/Blackmagic_Desktop_Video_Linux_11.6/deb/x86_64/desktopvideo-gui_11.6a26_amd64.deb
+    - http://pc8/blackmagic/Blackmagic_Desktop_Video_Linux_11.6/deb/x86_64/mediaexpress_3.6.1a24_amd64.deb
+      # - http://pc8/blackmagic/Blackmagic_Desktop_Video_Linux_11.6/deb/x86_64/desktopvideo-scanner_11.6a26_amd64.deb
+    dkms_version: 11.6a26
 
 blackmagic_default_mode: 720p5994
 
@@ -67,11 +69,12 @@ blackmagic_sources:
 
 serial_terminal:
 - tio
-- cu
+  #- cu
 #- flterm
 
 sources:
-- Camera
+- Camera1
+- Camera2
 - Grabber
 
 rsync_excludes:

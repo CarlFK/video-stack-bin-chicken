@@ -1,8 +1,11 @@
 ---
-room_name: main
+room_name: joe
 
 blackmagic_sources:
 - card: 0
+  connection: HDMI
+  audio: true
+- card: 1
   connection: HDMI
   audio: true
 

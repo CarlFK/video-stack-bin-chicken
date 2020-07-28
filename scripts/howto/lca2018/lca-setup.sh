@@ -67,7 +67,10 @@ sudo apt-get -y install build-essential libncurses5-dev gcc make git exuberant-c
 if [ ! -d HDMI2USB-mode-switch ]; then
     git clone https://github.com/timvideos/HDMI2USB-mode-switch.git
 fi
-(cd HDMI2USB-mode-switch/udev
+if [ ! -d HDMI2USB-mode-switch ]; then
+    git clone https://github.com/timvideos/litex-buildenv-udev
+fi
+(cd litex-buildenv-udev
 git pull
 make install
 sudo udevadm control --reload-rules

@@ -3,4 +3,13 @@ org: nbpy
 show: nbpy19
 room_name: mystic
 
-disk: /dev/sda
+video_disk: /dev/sda1
+
+blackmagic_sources:
+- card: 0
+  connection: hdmi
+  mode: 720p5994
+  audio: true
+
+
+

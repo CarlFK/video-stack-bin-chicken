@@ -1,5 +1,6 @@
 [onsite]
 bare
+voctotest ansible_host=10.200.1.164
 
 [onsite:children]
 tftp-dhcp-server
@@ -8,13 +9,16 @@ voctomix
 opsis
 veyepar-basic
 veyepar-encoder-nfs-storage
+veyepar-www
 rnd
 sugar
 conky
 streamon
 
-[diag]
+[sidedoor]
+cnt3
 cnt1
+voctotest ansible_host=10.100.3.63
 
 [tftp-dhcp-server]
 negk
@@ -26,12 +30,13 @@ gator
 cnt1
 cnt2
 cnt3
-cnt4
+# cnt4
 cnt5
 cnt6
 cnt7
 
 [opsis]
+gator
 odroid1
 odroid2
 odroid3
@@ -54,7 +59,6 @@ smpi.local
 trist
 
 [veyepar-basic]
-gator
 val1
 
 [veyepar-encoder-nfs-storage]
@@ -63,7 +67,11 @@ val1
 nk2
 dell04
 
+[veyepar-www]
+# cnt4
+
 [sugar]
+gator
 # dc10b
 cnt1
 cnt2
@@ -72,22 +80,22 @@ cnt6
 val1
 bb4
 u2
-gator
 bb5
 bb7
 # negk
 pdp11
 
 [conky]
+gator
 # dc10b
 cnt1
 cnt2
+cnt4 # ansible_host=10.100.3.27
 cnt5
 cnt6
 cnt7
 bb4
 u2
-gator
 bb5
 bb7
 val1

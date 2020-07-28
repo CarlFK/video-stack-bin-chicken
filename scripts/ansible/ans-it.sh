@@ -20,6 +20,8 @@ inv_repo=video-stack-bin-chicken
 inventory_file=${inv_repo}/${inv_dir}/hosts
 grep ${box} ${inventory_file}
 
+export ANSIBLE_STDOUT_CALLBACK=yaml
+
 ansible-playbook \
     -vv \
     ansible/site.yml \
@@ -28,7 +30,6 @@ ansible-playbook \
     --limit $box \
     --user root \
     --diff \
-    --vault-password-file vault-sec.txt \
     --extra-vars="{ \
 'veyepar_confs': '/home/carl/src/veyepar', \
 'veyepar_assets': '/home/carl/Videos/veyepar', \
@@ -39,6 +40,8 @@ ansible-playbook \
 
 exit
 
+    # --vault-password-file vault-sec.txt \
+    --vault-password-file ~/.ansible-vault \
 ansible-playbook \
     -vv \
     ansible/site.yml \
@@ -50,6 +53,7 @@ ansible-playbook \
 exit
 
 
+    # --limit @/home/carl/src/tv/lca/ansible/site.retry \
     # --become-user videoteam --become --ask-become-pass \
     # --start-at-task="rnd : git clone bunch of things"
 
