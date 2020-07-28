@@ -88,5 +88,7 @@ rsync_excludes:
 # what the pxe server can install
 ubuntu_suites: []
 
+debian_version: buster
+
 veyepar_url: http://veyepar.nextdayvideo.com
 
