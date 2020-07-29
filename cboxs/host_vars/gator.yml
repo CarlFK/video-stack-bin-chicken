@@ -18,7 +18,7 @@ blackmagic_sources:
   audio: true
 
 ingest_sources:
-  - description: "test pattern: bars and beeps"
+  - description: "knockoff gopro uvc cam"
     src: "v4l2src device=/dev/video2 ! queue ! decodebin ! videoconvert ! videorate ! videoscale ! {videocaps} ! mux. audiotestsrc wave=ticks freq=330 ! {audiocaps} ! queue ! matroskamux name=mux !"
     port: 10003
 
