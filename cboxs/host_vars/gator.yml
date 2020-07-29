@@ -1,6 +1,12 @@
 ---
 room_name: joe
 
+sources:
+  - Camera1
+  - Camera2
+  - Grabber
+  - Head
+
 blackmagic_sources:
 - card: 0
   connection: HDMI
@@ -11,4 +17,8 @@ blackmagic_sources:
   mode: 1080i5994
   audio: true
 
-# alsa_device: hw:1
+ingest_sources:
+  - description: "test pattern: bars and beeps"
+    src: "v4l2src device=/dev/video2 ! queue ! decodebin ! videoconvert ! videorate ! videoscale ! {videocaps} ! mux. audiotestsrc wave=ticks freq=330 ! {audiocaps} ! queue ! matroskamux name=mux !"
+    port: 10003
+
