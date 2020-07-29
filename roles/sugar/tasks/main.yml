@@ -73,14 +73,36 @@
       # - [timvideos, HDMI2USB-mode-switch]
       # - [timvideos, HDMI2USB-litex-firmware]
     # - [timvideos, HDMI2USB-firmware-prebuilt]
+    # - [litex-hub, litex-buildenv-udev]
+  - [CarlFK, litex-buildenv-udev]
   - [CarlFK, clocky]
   - [CarlFK, voctomix-outcasts]
   - [aguinet, usbtop]
 
+- name: smack in patched master udev for opsis
+  copy:
+    remote_src: yes
+    src: "/home/{{ user_name }}/litex-buildenv-udev/"
+    dest: /etc/udev/rules.d/
 
-- lineinfile:
+- name: remove old udev
+  file:
+    path: /usr/lib/udev/rules.d/60-hdmi2usb-udev.rules
+    state: absent
+
+- name: update ingest.py
+  copy:
+    remote_src: yes
+    src: "/home/{{ user_name }}/voctomix-outcasts/ingest.py"
+    dest: /usr/share/voctomix-outcasts/
+    owner: root
+    group: root
+    mode: u+rwx,g+rx,o+rx
+
+- name: add DISPLAY=:0 to ~/.bashrc
+  lineinfile:
     path: /home/{{ user_name }}/.bashrc
     regexp: '^export DISPLAY='
-    line: 'export DISPLAY=:0.0'
+    line: 'export DISPLAY=:0'
   tags:
     - display

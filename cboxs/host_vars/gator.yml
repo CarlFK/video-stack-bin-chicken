@@ -4,9 +4,11 @@ room_name: joe
 blackmagic_sources:
 - card: 0
   connection: HDMI
+  mode: 720p5994
   audio: true
 - card: 1
   connection: HDMI
+  mode: 1080i5994
   audio: true
 
 # alsa_device: hw:1
