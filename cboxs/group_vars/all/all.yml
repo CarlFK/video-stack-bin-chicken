@@ -49,7 +49,9 @@ voctomix:
   framerate: 30
   previews: false
   autostart_gui: false
+  streaming.method: rtmp
   # loop_url: None
+
 
 blackmagic:
     urls:

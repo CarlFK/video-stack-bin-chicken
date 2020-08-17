@@ -1,6 +1,6 @@
 [onsite]
 bare
-voctotest ansible_host=10.200.1.164
+# voctotest ansible_host=10.200.1.164
 
 [onsite:children]
 tftp-dhcp-server
@@ -18,7 +18,7 @@ streamon
 [sidedoor]
 cnt3
 cnt1
-voctotest ansible_host=10.100.3.63
+# voctotest ansible_host=10.100.3.63
 
 [tftp-dhcp-server]
 negk
@@ -30,7 +30,7 @@ gator
 cnt1
 cnt2
 cnt3
-# cnt4
+cnt4
 cnt5
 cnt6
 cnt7
@@ -66,6 +66,7 @@ val1
 [rnd]
 nk2
 dell04
+piggy
 
 [veyepar-www]
 # cnt4

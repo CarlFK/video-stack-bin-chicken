@@ -15,7 +15,6 @@ box=$2
 # inv_repo=video-stack-inventory
 inv_repo=video-stack-bin-chicken
 # inv_repo=ansible
-# inv_repo=av-foss-stack
 
 inventory_file=${inv_repo}/${inv_dir}/hosts
 grep ${box} ${inventory_file}
