@@ -37,11 +37,13 @@ if [ ! -d /opt/Xilinx ]; then
 
     mkdir -p local
     (cd local
+
+    # automated install, no gui or UI needed:
     # xsetup -b Install \
     #    -a XilinxEULA,3rdPartyEULA,WebTalkTerms \
     #    -c install_config.txt
-    tar --keep-newer-files -xvf /media/${xdisk}/tv/xilinx/Vivado_2018.3.tbz
-    # rsync -trvP /media/${xdisk}/tv/xilinx/Xilinx .
+
+    tar --keep-newer-files -xvf /media/${xdisk}/tv/xilinx/Vivado_2019_2.tgz
     sudo ln -sf ~/local/Xilinx /opt
     # sudo chown $USER: /opt/Xilinx
     )
