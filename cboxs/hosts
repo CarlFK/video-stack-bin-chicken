@@ -15,6 +15,20 @@ sugar
 conky
 streamon
 
+
+[firewall]
+groot.online.debconf.org
+
+[streaming-backends]
+groot.online.debconf.org
+gator
+veyepar.nextdayvideo.com
+
+[streaming-frontends]
+groot.online.debconf.org
+gator
+veyepar.nextdayvideo.com
+
 [sidedoor]
 cnt3
 cnt1
@@ -26,7 +40,7 @@ negk
 [nfs-server]
 
 [voctomix]
-gator
+# gator
 cnt1
 cnt2
 cnt3

@@ -1,5 +1,5 @@
 ---
-user_name: juser
+user_name: ubuntu
 user_password_crypted: "$6$khprmotoVWYLZY2W$Gj5Y6p4R.LsXQdL2xf6umhInzZ9GCG6USXB0XIl86m5.IbqSOPXJ0mxVUE7y5kGFE/arHgExAxoz0kEULiplZ."
 ssh_password_auth: true
 
@@ -8,10 +8,7 @@ autologin: True
 publisher: ndv
 org: lca
 show: lca2020
-# room_name: room_1
-
-streaming:
-  method: null
+room_name: room_1
 
 irc:
   network: freenode
@@ -53,6 +50,7 @@ voctomix:
   streaming.method: rtmp
   # loop_url: None
 
+letsencrypt_account_email: carl@NextDayVideo.com
 
 blackmagic:
     urls:
