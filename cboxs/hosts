@@ -19,12 +19,7 @@ streamon
 [firewall]
 groot.online.debconf.org
 
-[streaming-backends]
-groot.online.debconf.org
-gator
-veyepar.nextdayvideo.com
-
-[streaming-frontends]
+[veyepar-web]
 groot.online.debconf.org
 gator
 veyepar.nextdayvideo.com

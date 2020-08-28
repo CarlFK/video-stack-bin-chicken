@@ -70,7 +70,8 @@ boxes:
 
     - hostname: gator
       ip: 10.10.0.20
-      mac: 80:3f:5d:08:c3:9f
+      # mac: 80:3f:5d:08:c3:9f # not sure where this mac came from
+      mac: 40:8d:5c:7f:bb:90
       disk: nvme0n1
 
     - hostname: negk

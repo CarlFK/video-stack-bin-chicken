@@ -1,7 +1,11 @@
 ---
+# user_name: videoteam
+# user_name: juser
 user_name: ubuntu
 user_password_crypted: "$6$khprmotoVWYLZY2W$Gj5Y6p4R.LsXQdL2xf6umhInzZ9GCG6USXB0XIl86m5.IbqSOPXJ0mxVUE7y5kGFE/arHgExAxoz0kEULiplZ."
 ssh_password_auth: true
+
+db_password: p4sword
 
 autologin: True
 
@@ -47,7 +51,7 @@ voctomix:
   framerate: 30
   previews: false
   autostart_gui: false
-  streaming.method: rtmp
+  # streaming.method: rtmp
   # loop_url: None
 
 letsencrypt_account_email: carl@NextDayVideo.com
