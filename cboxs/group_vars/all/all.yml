@@ -1,7 +1,5 @@
 ---
-# user_name: videoteam
-# user_name: juser
-user_name: ubuntu
+user_name: juser
 user_password_crypted: "$6$khprmotoVWYLZY2W$Gj5Y6p4R.LsXQdL2xf6umhInzZ9GCG6USXB0XIl86m5.IbqSOPXJ0mxVUE7y5kGFE/arHgExAxoz0kEULiplZ."
 ssh_password_auth: true
 
