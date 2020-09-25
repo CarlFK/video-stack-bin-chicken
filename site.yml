@@ -13,6 +13,7 @@
 
 - hosts: conky
   roles:
+  - xorg
   - conky
 
 - hosts: sugar

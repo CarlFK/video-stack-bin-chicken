@@ -90,3 +90,5 @@ boxes:
       mac: 00:25:90:56:1b:b0
       disk: sda
 
+    - hostname: piggy
+      mac: c8:60:00:69:0b:3e
