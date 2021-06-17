@@ -10,7 +10,7 @@ opsis
 veyepar-basic
 veyepar-encoder-nfs-storage
 veyepar-www
-rnd
+# rnd
 sugar
 conky
 streamon
@@ -20,13 +20,13 @@ streamon
 groot.online.debconf.org
 
 [veyepar-web]
-cnt4
+# cnt4
 groot.online.debconf.org
-gator
+# gator
 veyepar.nextdayvideo.com
 
 [sidedoor]
-cnt3
+cnt4
 cnt1
 # voctotest ansible_host=10.100.3.63
 
@@ -36,7 +36,7 @@ negk
 [nfs-server]
 
 [voctomix]
-# gator
+gator
 cnt1
 cnt2
 cnt3
@@ -49,7 +49,7 @@ cnt7
 gator
 odroid1
 odroid2
-odroid3
+# odroid3
 odroid4
 odroid5
 odroid6
@@ -63,10 +63,12 @@ tbot1
 pdp11
 jd
 smpi.local
+odroid3
 
 [test-station]
 # dc10b
-trist
+# odroid3
+# trist
 
 [veyepar-basic]
 val1
@@ -80,7 +82,7 @@ piggy
 
 [sugar]
 piggy
-gator
+# gator
 # dc10b
 cnt1
 cnt2
@@ -100,7 +102,7 @@ gator
 # dc10b
 cnt1
 cnt2
-cnt4 # ansible_host=10.100.3.27
+# cnt4 # ansible_host=10.100.3.27
 cnt5
 cnt6
 cnt7

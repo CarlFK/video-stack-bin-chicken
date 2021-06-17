@@ -58,14 +58,6 @@ voctomix:
 
 letsencrypt_account_email: carl@NextDayVideo.com
 
-blackmagic:
-    urls:
-    - http://pc8/blackmagic/Blackmagic_Desktop_Video_Linux_11.6/deb/x86_64/desktopvideo_11.6a26_amd64.deb
-    - http://pc8/blackmagic/Blackmagic_Desktop_Video_Linux_11.6/deb/x86_64/desktopvideo-gui_11.6a26_amd64.deb
-    - http://pc8/blackmagic/Blackmagic_Desktop_Video_Linux_11.6/deb/x86_64/mediaexpress_3.6.1a24_amd64.deb
-      # - http://pc8/blackmagic/Blackmagic_Desktop_Video_Linux_11.6/deb/x86_64/desktopvideo-scanner_11.6a26_amd64.deb
-    dkms_version: 11.6a26
-
 blackmagic_default_mode: 720p5994
 
 blackmagic_sources:
@@ -95,7 +87,7 @@ rsync_excludes:
 # what the pxe server can install
 ubuntu_suites: []
 
-debian_version: buster
+debian_version: bullseye
 
 veyepar_url: http://veyepar.nextdayvideo.com
 

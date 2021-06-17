@@ -29,10 +29,12 @@ ansible-playbook \
     --limit $box \
     --user root \
     --diff \
+    --vault-password-file ~/.ansible-vault \
     --extra-vars="{ \
 'veyepar_confs': '/home/carl/src/veyepar', \
 'veyepar_assets': '/home/carl/Videos/veyepar', \
 'veyepar_url': 'http://veyepar.nextdayvideo.com', \
+'user_password': 'useme', \
 'vault_pw': '',  \
 'ansible_python_interpreter': '/usr/bin/python3'}" \
     $3 $4
@@ -40,7 +42,6 @@ ansible-playbook \
 exit
 
     # --vault-password-file vault-sec.txt \
-    --vault-password-file ~/.ansible-vault \
 ansible-playbook \
     -vv \
     ansible/site.yml \

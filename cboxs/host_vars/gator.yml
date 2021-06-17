@@ -6,8 +6,7 @@ room_name: joe
 sources:
   - Camera1
   - Camera2
-  - Grabber
-  - Head
+  - Camera3
 
 blackmagic_sources:
 - card: 0
@@ -16,11 +15,11 @@ blackmagic_sources:
   audio: true
 - card: 1
   connection: HDMI
-  mode: 1080i5994
-  audio: true
+  mode: 720p5994
+  audio: false
 
 ingest_sources:
-  - description: "knockoff gopro uvc cam"
-    src: "v4l2src device=/dev/video2 ! queue ! decodebin ! videoconvert ! videorate ! videoscale ! {videocaps} ! mux. audiotestsrc wave=ticks freq=330 ! {audiocaps} ! queue ! matroskamux name=mux !"
-    port: 10003
+  - description: "janky handi cam"
+    src: "v4l2src device=/dev/video0 ! queue ! decodebin ! videoconvert ! videorate ! videoscale ! {videocaps} ! mux. audiotestsrc wave=ticks freq=330 ! {audiocaps} ! queue ! matroskamux name=mux !"
+    port: 10002
 
