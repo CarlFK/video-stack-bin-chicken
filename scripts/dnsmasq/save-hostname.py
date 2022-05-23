@@ -76,7 +76,7 @@ def add_to_file(args):
     with open(args.filename,'a') as f:
         lines='\n# {hostname}\n' \
             'dhcp-host={mac},set:{hostname},{hostname}\n'.format(
-i                  mac=args.mac, ip=args.ip, hostname=args.hostname)
+                  mac=args.mac, ip=args.ip, hostname=args.hostname)
         f.write(lines)
 
 def add_maybe(args):
@@ -131,11 +131,11 @@ def main():
     args = get_args()
 
     if DEBUG:
-	with open('/tmp/foo','a') as f:
-	    f.write(args.__repr__())
-	    f.write('\n')
+        with open('/tmp/foo','a') as f:
+            f.write(args.__repr__())
+            f.write('\n')
             f.write(os.getenv('DNSMASQ_SUPPLIED_HOSTNAME', "oh no!"))
-	    f.write('\n')
+            f.write('\n')
 
     if args.action == "add":
         add_maybe(args)
