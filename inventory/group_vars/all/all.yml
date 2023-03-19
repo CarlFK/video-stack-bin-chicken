@@ -1,0 +1,100 @@
+---
+ansible_python_interpreter: /usr/bin/python3
+skip_unit_test: False
+run_django_collectstatic: True
+
+user_name: juser
+user_password_crypted: "$6$khprmotoVWYLZY2W$Gj5Y6p4R.LsXQdL2xf6umhInzZ9GCG6USXB0XIl86m5.IbqSOPXJ0mxVUE7y5kGFE/arHgExAxoz0kEULiplZ."
+ssh_password_auth: true
+
+db_password: changeme
+
+autologin: True
+
+publisher: ndv
+org: lca
+show: lca2020
+room_name: room_1
+
+irc:
+  network: freenode
+  server: irc.freenode.net
+  ssl_port: 6697
+  global_channels:
+  - "#TimVideos"
+  - "#PumpingStationOne"
+
+irc_autostart: false
+
+upload_formats: ['mp4']
+
+time_zone: America/Chicago
+
+frequency: 60
+
+domain: home
+
+apt_proxy: true
+
+# Git repos:
+playbook_repo: https://salsa.debian.org/debconf-video-team/ansible
+# playbook_repo: https://github.com/CarlFK/video-stack-deploy.git
+playbook_branch: master
+
+# inventory_repo: https://github.com/CarlFK/video-stack-inventory.git
+inventory_repo: https://github.com/CarlFK/video-stack-bin-chicken.git
+inventory_repo_dir: cboxs
+
+voctomix:
+  host: localhost
+  port: 10002
+  mirrors: true
+  display_system: x
+  framerate: 30
+  previews: false
+  autostart_gui: false
+  # streaming.method: rtmp
+  # loop_url: None
+
+letsencrypt_account_email: carl@NextDayVideo.com
+cboxs
+blackmagic:
+  urls:
+  - http://pc8/bm/Blackmagic_Desktop_Video_Linux_12.4.1/deb/x86_64/desktopvideo_12.4.1a15_amd64.deb
+  - http://pc8/bm/Blackmagic_Desktop_Video_Linux_12.4.1/deb/x86_64/desktopvideo-gui_12.4.1a15_amd64.deb
+  - http://pc8/bm/Blackmagic_Desktop_Video_Linux_12.4.1/deb/x86_64/mediaexpress_3.8.1a4_amd64.deb
+  dkms_version: 12.4.1a15
+
+blackmagic_default_mode: 720p5994
+
+blackmagic_sources:
+- card: 0
+  connection: hdmi
+  mode: 720p5994
+  audio: true
+
+serial_terminal:
+- tio
+  #- cu
+#- flterm
+
+sources:
+- Camera1
+- Camera2
+- Grabber
+
+rsync_excludes:
+- 0[0-7]*.ts
+- 0[0-7]*.ts.mp4
+- 0[0-7]*.ts.wav.png
+- 2*.ts
+- 2*.ts.mp4
+- 2*.ts.wav.png
+
+# what the pxe server can install
+ubuntu_suites: []
+
+debian_version: bullseye
+
+veyepar_url: http://veyepar.nextdayvideo.com
+
