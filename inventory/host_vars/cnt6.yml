@@ -1,0 +1,4 @@
+---
+room_name: cartoon1
+
+video_disk: /dev/disk/by-path/pci-0000:00:1f.2-ata-1-part1

@@ -1,0 +1,36 @@
+room_name: suzanne_scharer
+
+video_disk: /dev/sda1
+# video_disk: /dev/disk/by-path/pci-0000:00:1f.2-ata-1-part1
+
+blackmagic_sources:
+- card: 0
+  connection: hdmi
+  mode: 720p5994
+  audio: true
+
+xingest_sources:
+- description: "DV cam 1"
+  video-source: dv
+  video-attribs:
+  audio-source: dv
+  audio-attribs:
+  port: 10000
+- description: "DV cam 2"
+  video-source: dv
+  video-attribs:
+  audio-source: dv
+  audio-attribs:
+  port: 10001
+- description: "Mini JVC GZ-E200BU - (12): HD1080 59.94i"
+  video-source: blackmagic
+  video-attribs: "connection=HDMI mode=1080i5994"
+  audio-source: blackmagic
+  audio-attribs:
+  port: 10002
+- description: "Sony HDR-PJ230 - (18): HD720 59.94p"
+  video-source: blackmagic
+  video-attribs: "connection=HDMI mode=720p5994"
+  audio-source: blackmagic
+  audio-attribs:
+  port: 10003

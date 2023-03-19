@@ -1,0 +1,6 @@
+---
+voctomix:
+  host: 10.20.0.20
+  port: 10001
+
+# alsa_device: hw:1
