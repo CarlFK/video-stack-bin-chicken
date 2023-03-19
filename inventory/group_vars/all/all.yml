@@ -57,7 +57,7 @@ voctomix:
   # loop_url: None
 
 letsencrypt_account_email: carl@NextDayVideo.com
-cboxs
+
 blackmagic:
   urls:
   - http://pc8/bm/Blackmagic_Desktop_Video_Linux_12.4.1/deb/x86_64/desktopvideo_12.4.1a15_amd64.deb
