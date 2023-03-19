@@ -12,8 +12,8 @@ echo ./ans-it.sh cboxs bare
 inv_dir=$1
 box=$2
 
-# inv_repo=video-stack-inventory
-inv_repo=video-stack-bin-chicken
+inv_repo=video-stack-inventory
+# inv_repo=video-stack-bin-chicken
 # inv_repo=ansible
 
 inventory_file=${inv_repo}/${inv_dir}/hosts

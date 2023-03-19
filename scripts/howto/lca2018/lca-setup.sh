@@ -43,7 +43,7 @@ if [ ! -d /opt/Xilinx ]; then
     #    -a XilinxEULA,3rdPartyEULA,WebTalkTerms \
     #    -c install_config.txt
 
-    tar --keep-newer-files -xvf /media/${xdisk}/tv/xilinx/Vivado_2019_2.tgz
+    tar --keep-newer-files -xvf /media/${xdisk}/tv/xilinx/Xilinx_Vivado_2019.2_1106_2127.tar.gz
     sudo ln -sf ~/local/Xilinx /opt
     # sudo chown $USER: /opt/Xilinx
     )
@@ -69,7 +69,7 @@ sudo apt-get -y install build-essential libncurses5-dev gcc make git exuberant-c
 if [ ! -d HDMI2USB-mode-switch ]; then
     git clone https://github.com/timvideos/HDMI2USB-mode-switch.git
 fi
-if [ ! -d HDMI2USB-mode-switch ]; then
+if [ ! -d litex-buildenv-udev ]; then
     git clone https://github.com/timvideos/litex-buildenv-udev
 fi
 (cd litex-buildenv-udev
