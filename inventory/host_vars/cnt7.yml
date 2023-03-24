@@ -1,7 +1,7 @@
 ---
-org: nbpy
-show: nbpy19
-room_name: mystic
+org: fossi
+show: latch_2023
+room_name: henley1010
 
 video_disk: /dev/sda1
 
@@ -10,6 +10,3 @@ blackmagic_sources:
   connection: hdmi
   mode: 720p5994
   audio: true
-
-
-
