@@ -17,8 +17,8 @@ show: lca2020
 room_name: room_1
 
 irc:
-  network: freenode
-  server: irc.freenode.net
+  network: libre.chat
+  server: irc.libe.chat
   ssl_port: 6697
   global_channels:
   - "#TimVideos"
@@ -43,7 +43,7 @@ playbook_branch: master
 
 # inventory_repo: https://github.com/CarlFK/video-stack-inventory.git
 inventory_repo: https://github.com/CarlFK/video-stack-bin-chicken.git
-inventory_repo_dir: cboxs
+inventory_repo_dir: inventory
 
 voctomix:
   host: localhost
@@ -56,13 +56,13 @@ voctomix:
   # streaming.method: rtmp
   # loop_url: None
 
-letsencrypt_account_email: carl@NextDayVideo.com
+# letsencrypt_account_email: carl@NextDayVideo.com
 
 blackmagic:
   urls:
-    desktopvideo: http://pc8/bm/Blackmagic_Desktop_Video_Linux_12.4.1/deb/x86_64/desktopvideo_12.4.1a15_amd64.deb
-    desktopvideo_gui: http://pc8/bm/Blackmagic_Desktop_Video_Linux_12.4.1/deb/x86_64/desktopvideo-gui_12.4.1a15_amd64.deb
-    mediaexpress: http://pc8/bm/Blackmagic_Desktop_Video_Linux_12.4.1/deb/x86_64/mediaexpress_3.8.1a4_amd64.deb
+    desktopvideo: http://10.100.3.48/bm/Blackmagic_Desktop_Video_Linux_12.4.1/deb/x86_64/desktopvideo_12.4.1a15_amd64.deb
+    desktopvideo_gui: http://10.100.3.48/bm/Blackmagic_Desktop_Video_Linux_12.4.1/deb/x86_64/desktopvideo-gui_12.4.1a15_amd64.deb
+    mediaexpress: http://10.100.3.48/bm/Blackmagic_Desktop_Video_Linux_12.4.1/deb/x86_64/mediaexpress_3.8.1a4_amd64.deb
   dkms_version: 12.4.1a15
 
 blackmagic_default_mode: 720p5994
@@ -80,7 +80,6 @@ serial_terminal:
 
 sources:
 - Camera1
-- Camera2
 - Grabber
 
 rsync_excludes:

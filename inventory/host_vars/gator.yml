@@ -1,23 +1,19 @@
 ---
-room_name: joe
+org: ps1
+show: fpga_1
+room_name: electronics_lab
+
+static_ip: 192.168.1.10
 
 sources:
   - Camera1
-  - Camera2
-  - Camera3
+  - Grabber
+
 
 blackmagic_sources:
 - card: 0
   connection: HDMI
   mode: 720p5994
   audio: true
-- card: 1
-  connection: HDMI
-  mode: 720p5994
-  audio: false
 
-ingest_sources:
-  - description: "janky handi cam"
-    src: "v4l2src device=/dev/video0 ! queue ! decodebin ! videoconvert ! videorate ! videoscale ! {videocaps} ! mux. audiotestsrc wave=ticks freq=330 ! {audiocaps} ! queue ! matroskamux name=mux !"
-    port: 10002
 
