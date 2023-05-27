@@ -12,8 +12,8 @@ db_password: changeme
 autologin: True
 
 publisher: ndv
-org: lca
-show: lca2020
+org: ndv
+show: custom
 room_name: room_1
 
 irc:
