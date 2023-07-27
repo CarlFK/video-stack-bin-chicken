@@ -1,6 +1,7 @@
 [onsite]
 bare
 # voctotest ansible_host=10.200.1.164
+val2 ansible_host=45.20.162.9
 
 [onsite:children]
 tftp-dhcp-server
@@ -58,6 +59,7 @@ odroid8
 odroid9
 tbot1
 # pdp11
+pi ansible_host=10.100.3.49
 
 [streamon]
 pdp11
