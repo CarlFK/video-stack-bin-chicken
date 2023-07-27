@@ -3,7 +3,7 @@ org: nbpy
 show: nbpy23
 room_name: barn
 
-video_disk: /dev/sda1
+# video_disk: /dev/sda1
 
 blackmagic_sources:
 - card: 0
