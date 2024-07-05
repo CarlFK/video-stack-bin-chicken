@@ -1,4 +1,6 @@
 ---
-room_name: hayscape
+org: fossi
+show: latch_2024
+room_name: b45_230
 
-video_disk: /dev/sdb1
+# video_disk: /dev/sdb1

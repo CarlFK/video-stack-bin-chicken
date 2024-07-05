@@ -37,6 +37,9 @@ boxes:
     - hostname: cnt7
       mac: c8:60:00:6d:8d:ca
 
+    - hostname: pi4opsis
+      mac: e4:5f:01:64:75:c6
+
     - hostname: odroid1
       mac: 00:1e:06:33:5a:36
 
@@ -64,13 +67,11 @@ boxes:
     - hostname: odroid9
       mac: 00:1e:06:33:cc:75
 
-
     - hostname: dc10b
       mac: b4:99:ba:e9:5c:5c
 
     - hostname: gator
       ip: 10.10.0.20
-      # mac: 80:3f:5d:08:c3:9f # not sure where this mac came from
       mac: 40:8d:5c:7f:bb:90
       disk: nvme0n1
 

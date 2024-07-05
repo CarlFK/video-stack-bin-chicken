@@ -1,9 +1,7 @@
 ---
-org: ps1
-show: fpga_1
-room_name: electronics_lab
-
-static_ip: 192.168.1.10
+org: fossi
+show: latch_2024
+room_name: r45_230
 
 sources:
   - Camera1

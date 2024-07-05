@@ -1,7 +1,9 @@
 [onsite]
-bare
+base
 # voctotest ansible_host=10.200.1.164
 val2 ansible_host=45.20.162.9
+pm2
+pm3
 
 [onsite:children]
 tftp-dhcp-server
@@ -30,6 +32,8 @@ veyepar.nextdayvideo.com
 cnt4
 cnt1
 # voctotest ansible_host=10.100.3.63
+pm2
+pm3
 
 [tftp-dhcp-server]
 negk
@@ -37,6 +41,8 @@ negk
 [nfs-server]
 
 [voctomix]
+voctomix1 # ansible_host=10.1.15.1
+voctomix2 ansible_host=10.1.10.235
 gator
 cnt1
 cnt2
@@ -47,6 +53,12 @@ cnt6
 cnt7 # ansible_host=10.21.0.225
 
 [opsis]
+pi4opsis1 ansible_host=192.168.1.145
+rpi ansible_host=10.10.2.18
+pi ansible_host=192.168.1.115
+# pi ansible_host=10.1.10.61
+opsis1
+opsis2
 # gator
 odroid1
 odroid2
@@ -59,7 +71,6 @@ odroid8
 odroid9
 tbot1
 # pdp11
-pi ansible_host=10.100.3.49
 
 [streamon]
 pdp11
@@ -74,6 +85,7 @@ smpi.local
 
 [veyepar-basic]
 val1
+# gator
 
 [veyepar-encoder-nfs-storage]
 
@@ -100,7 +112,7 @@ pdp11
 
 [conky]
 piggy
-gator
+# gator
 # dc10b
 cnt1
 cnt2
