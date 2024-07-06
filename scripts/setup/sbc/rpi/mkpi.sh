@@ -14,13 +14,48 @@
 # dlurl=http://cdimage.ubuntu.com/ubuntu-server/daily-preinstalled/current/groovy-preinstalled-server-armhf+raspi.img.xz
 # dlurl=http://cdimage.ubuntu.com/ubuntu-server/daily-preinstalled/current/groovy-preinstalled-server-arm64+raspi.img.xz
 # dlurl=https://raspi.debian.net/daily/raspi_3.img.xz
-dlurl=https://raspi.debian.net/verified/20200501_raspi_3.img.xz
+# dlurl=https://raspi.debian.net/verified/20200501_raspi_3.img.xz
 
-dlurl=http://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2020-05-28/2020-05-27-raspios-buster-lite-armhf.zip
+# dlurl=http://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2020-05-28/2020-05-27-raspios-buster-lite-armhf.zip
 
-# https://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2020-02-14/2020-02-13-raspbian-buster-lite.zip
+# dlurl=https://raspi.debian.net/tested/20210823_raspi_4_bullseye.img.xz
+
+# http://downloads.raspberrypi.org/raspios_lite_armhf/images/raspios_lite_armhf-2022-04-07/2022-04-04-raspios-bullseye-armhf-lite.img.xz
+# raspios_lite_armhf/images/raspios_lite_armhf-2022-04-07
+# 2022-04-04-raspios-bullseye-armhf-lite.img.xz
+
+# http://downloads.raspberrypi.org/raspios_full_armhf/images/raspios_full_armhf-2022-04-07/2022-04-04-raspios-bullseye-armhf-full.img.xz
+
+img_host=http://downloads.raspberrypi.org
+
+# img_path=raspios_full_armhf/images/raspios_full_armhf-2022-04-07
+# base_name=2022-04-04-raspios-bullseye-armhf-full.img
+
+# img_path=raspios_lite_armhf/images/raspios_lite_armhf-2023-05-03
+# base_name=2023-05-03-raspios-bullseye-armhf-lite.img
+
+# img_path=raspios_full_armhf/images/raspios_full_armhf-2023-05-03/
+# base_name=2023-05-03-raspios-bullseye-armhf-full.img
+
+# img_path=raspios_lite_armhf/images/raspios_lite_armhf-2023-12-11
+# base_name=2023-12-11-raspios-bookworm-armhf-lite.img
+
+# img_path=raspios_lite_arm64/images/raspios_lite_arm64-2023-12-11
+# base_name=2023-12-11-raspios-bookworm-arm64-lite.img
+
+img_path=raspios_lite_armhf/images/raspios_lite_armhf-2024-03-15
+base_name=2024-03-15-raspios-bookworm-armhf-lite.img
+
+zip_name=${base_name}.xz
+# user=pi
+
+# dev=mmcblk0
+dev=sda
 
 cache=cache
+
+# url=$(curl -w "%{json}" --head https://downloads.raspberrypi.org/raspbian_latest |tail --lines 1 |  jq .redirect_url)
+# if [ $(basename $url) = $base_name ]; then exit fi
 
 (cd ${cache}
 
@@ -33,7 +68,7 @@ cache=cache
 # http://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2020-02-14/2020-02-13-raspbian-buster-lite.zip
 # wget -N http://cdimage.ubuntu.com/releases/20.04/release/ubuntu-20.04-preinstalled-server-arm64+raspi.img.xz
 
-wget -N ${dlurl}
+wget -N ${img_host}/${img_path}/${zip_name}
 )
 
 # img=2019-04-08-raspbian-stretch-lite.zip
@@ -46,64 +81,59 @@ wget -N ${dlurl}
 # img=groovy-preinstalled-server-arm64+raspi.img.xz
 # img=raspi_3.img.xz
 # img=20200501_raspi_3.img.xz
-img=2020-05-27-raspios-buster-lite-armhf.zip
+# img=2020-05-27-raspios-buster-lite-armhf.zip
 
-dev=mmcblk0
-# dev=sdc
+# img=20210823_raspi_4_bullseye.img.xz
 
-
-# user=ubuntu
-user=pi
 
 # hname=smpi
-hname=cc
+# hname=cc
+# hname=krakensdr
+
+hname=$1
 
 for p in /dev/${dev}* # p?
     do pumount $p || true
 done
 
-time zcat ${cache}/$img|sudo dcfldd of=/dev/$dev
-# time xz --decompress --stdout ${cache}/$img|sudo dcfldd of=/dev/$dev
+# time zcat ${cache}/${zip_name}|sudo dcfldd of=/dev/$dev
+time xz --decompress --stdout ${cache}/${zip_name}|sudo dcfldd of=/dev/$dev
 
 # mount the partitions under /media/boot and /media/rootfs
 sudo partprobe /dev/${dev}
 sleep 1
 
-pmount ${dev}p1 boot
-# pmount ${dev}1 boot
-pmount ${dev}p2 rootfs
+# pmount ${dev}p1 boot
+# pmount ${dev}p2 rootfs
+pmount ${dev}1 boot
+pmount ${dev}2 rootfs
 
 # backup old conf
-# sudo mv /media/boot/config.txt /media/boot/config.org
+sudo cp /media/boot/config.txt /media/boot/config.org
 # hdmi settings: (ignore edid, 1080p, overscan)
 # sudo cp config/bigtv_config.txt /media/boot/config.txt
+# enable serial for console
+# sudo cp config/config.txt /media/boot/config.txt
 
 # don't resize
 # cp /media/boot/cmdline.txt /tmp
-
 # (never mind, let it resize)
 # sudo cp config/cmdline.txt /media/boot/
 
 # don't blank the console after timeout
 sudo printf " consoleblank=0" >> /media/boot/cmdline.txt
 
+# set the keybarod to US
 sudo cp config/keyboard /media/rootfs/etc/default
+
+# show IP and other stuff on console
 sudo cp config/issue /media/rootfs/etc/
-sudo cp config/30autoproxy /media/rootfs/etc/apt/apt.conf.d
 
-# enable ssh, cp keys from local user
-sudo touch /media/boot/ssh
+# use carl's local .deb cache:
+# sudo cp config/30autoproxy /media/rootfs/etc/apt/apt.conf.d
 
-sudo mkdir -p /media/rootfs/root/.ssh
-sudo ssh-keygen -f /media/rootfs/root/.ssh/id_rsa -P score
-
-sudo mkdir -p /media/rootfs/home/${user}/.ssh
-sudo ssh-keygen -f /media/rootfs/home/${user}/.ssh/id_rsa -P score
-
-# sudo cp ~/.ssh/id_rsa.pub /media/rootfs/root/.ssh/authorized_keys
-sudo cp config/ssh/authorized_keys /media/rootfs/root/.ssh/authorized_keys
-sudo cp config/ssh/authorized_keys /media/rootfs/home/${user}/.ssh/authorized_keys
-sudo chown -R --reference=/media/rootfs/home/${user} /media/rootfs/home/${user}/.ssh
+# disable pw, port 22129
+# sudo cp config/sshd_local.conf /media/rootfs/etc/ssh/sshd_config.d/
 
 # set hostname
 sudo sed -i "s/raspberrypi/${hname}/" /media/rootfs/etc/hostname
@@ -117,6 +147,9 @@ sleep 5
 for p in /dev/${dev}*[12]
     do pumount $p || true
 done
+
+echo sudo rsync -LP ${cache}/${zip_name} /media/carl/rootfs/root/files/
+echo Dont "forget to fixit.sh (ssh keys...)"
 
 exit
 
