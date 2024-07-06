@@ -17,6 +17,6 @@ do
   wget ${stock}/${fn}
 done
 
-hook_loc=https://github.com/CarlFK/video-stack-bin-chicken/tree/master/scripts/setup
+hook_loc=https://github.com/CarlFK/video-stack-bin-chicken/raw/master/scripts/setup/lc2
 wget ${hook_loc}/late_command2.sh
 
