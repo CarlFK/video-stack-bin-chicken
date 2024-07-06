@@ -38,9 +38,10 @@ staticips:
     mac: 54:04:a6:c3:33:03
 
   - hostname: cnt5
-    ip: 10.20.0.50
+    # ip: 10.20.0.50
+    ip: 192.168.1.50
     mac: c8:60:00:6a:13:ae
-    disk: /dev/sdc
+      # disk: /dev/sdc
 
   - hostname: cnt6
     ip: 10.20.0.60

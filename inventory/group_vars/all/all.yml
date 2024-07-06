@@ -74,20 +74,18 @@ blackmagic_sources:
 
 serial_terminal:
 - tio
-  #- cu
+#- cu
 #- flterm
 
 sources:
 - Camera1
 - Grabber
 
+rsync_local_dest: /mnt/disk/Videos/veyepar/
 rsync_excludes:
 - 0[0-7]*.ts
-- 0[0-7]*.ts.mp4
-- 0[0-7]*.ts.wav.png
-- 2*.ts
-- 2*.ts.mp4
-- 2*.ts.wav.png
+- 19*.ts
+- 2[0-3]*.ts
 
 # what the pxe server can install
 ubuntu_suites: []
