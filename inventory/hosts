@@ -48,7 +48,7 @@ cnt1
 cnt2
 cnt3
 # cnt4
-cnt5
+cnt5 ansible_host=192.168.1.50
 cnt6
 cnt7 # ansible_host=10.21.0.225
 

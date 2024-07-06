@@ -13,7 +13,7 @@ ssh_password_auth: true
 autologin: True
 
 publisher: ndv
-org: ndv
+org: PyOhio
 show: PyOhio_2024
 # room_name: room_1
 
@@ -81,7 +81,7 @@ sources:
 - Camera1
 - Grabber
 
-rsync_local_dest: /mnt/disk/Videos/veyepar/
+rsync_local_dest: /mnt/disk/Videos/veyepar
 rsync_excludes:
 - 0[0-7]*.ts
 - 19*.ts
