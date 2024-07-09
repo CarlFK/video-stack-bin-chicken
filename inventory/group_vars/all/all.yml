@@ -81,7 +81,7 @@ sources:
 - Camera1
 - Grabber
 
-rsync_local_dest: /mnt/disk/Videos/veyepar
+rsync_local_dest: /media/xfer/Videos/veyepar
 rsync_excludes:
 - 0[0-7]*.ts
 - 19*.ts
