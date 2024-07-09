@@ -1,7 +1,7 @@
 ---
 room_name: barbietootle
 
-video_disk: /dev/sda1
+# video_disk: /dev/sda1
 
 ingest_sources:
   - description: "knockoff gopro uvc cam"
