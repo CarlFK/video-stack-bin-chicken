@@ -47,8 +47,8 @@ gator
 cnt1
 cnt2
 cnt3
-# cnt4
-cnt5 ansible_host=192.168.1.50
+cnt4
+cnt5 # ansible_host=192.168.1.50
 cnt6
 cnt7 # ansible_host=10.21.0.225
 
@@ -98,10 +98,10 @@ piggy
 piggy
 # gator
 # dc10b
-cnt1
-cnt2
-cnt5
-cnt6
+# cnt1
+# cnt2
+# cnt5
+# cnt6
 val1
 bb4
 u2
@@ -114,11 +114,11 @@ pdp11
 piggy
 # gator
 # dc10b
-cnt1
-cnt2
+# cnt1
+# cnt2
 # cnt4 # ansible_host=10.100.3.27
-cnt5
-cnt6
+# cnt5
+# cnt6
 # cnt7 # ansible_host=10.21.0.225
 bb4
 u2
