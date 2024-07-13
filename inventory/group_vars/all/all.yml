@@ -13,9 +13,12 @@ ssh_password_auth: true
 autologin: True
 
 publisher: ndv
-org: PyOhio
-show: PyOhio_2024
-# room_name: room_1
+org: pyohio
+show: pyohio_2024
+  # room_name: orchid_east
+  # room_name: orchid_west
+  # room_name: calypso
+  # room_name: cattleya
 
 irc:
   network: libre.chat
