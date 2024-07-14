@@ -30,7 +30,6 @@ veyepar.nextdayvideo.com
 
 [sidedoor]
 cnt4
-cnt1
 # voctotest ansible_host=10.100.3.63
 pm2
 pm3
@@ -44,7 +43,7 @@ negk
 voctomix1 # ansible_host=10.1.15.1
 voctomix2 ansible_host=10.1.10.235
 gator
-cnt1
+cnt1 ansible_host=10.100.3.1
 cnt2
 cnt3
 cnt4
