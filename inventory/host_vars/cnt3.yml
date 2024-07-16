@@ -1,4 +1,4 @@
 ---
-room_name: arena
+room_name: cnt3
 
-disk: /dev/sda
+  # disk: /dev/sda
