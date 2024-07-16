@@ -86,9 +86,12 @@ sources:
 
 rsync_local_dest: /media/xfer/Videos/veyepar
 rsync_excludes:
+- 2024-07-1?/*.ts
+- 2024-07-2[0-6]/*.ts
 - 0[0-7]*.ts
 - 19*.ts
 - 2[0-3]*.ts
+- 2024-07-29/*.ts
 
 # what the pxe server can install
 ubuntu_suites: []
