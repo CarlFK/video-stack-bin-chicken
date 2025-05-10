@@ -55,8 +55,13 @@ mixer:
   framerate: 30
   previews: false
   autostart_gui: true
-  # streaming.method: rtmp
+  # streaming.method: none
+  # streaming.frontend: none
   # loop_url: None
+
+streaming:
+  method: none
+  frontend: none
 
 # letsencrypt_account_email: carl@NextDayVideo.com
 

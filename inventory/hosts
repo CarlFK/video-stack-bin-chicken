@@ -4,6 +4,9 @@ base
 val2 ansible_host=45.20.162.9
 pm2
 pm3
+# v2 ansible_host=10.2.2.238
+# v2 ansible_host=10.20.2.15
+# v2
 
 [onsite:children]
 tftp-dhcp-server
@@ -17,6 +20,9 @@ veyepar-web
 sugar
 conky
 streamon
+# v2 ansible_host=10.2.2.238
+# v2 ansible_host=10.20.2.15
+# v2
 
 
 [firewall]
@@ -40,6 +46,7 @@ negk
 [nfs-server]
 
 [voctomix]
+mwcon
 voctomix1 # ansible_host=10.1.15.1
 voctomix2 ansible_host=10.1.10.235
 gator
@@ -76,6 +83,7 @@ pdp11
 jd
 smpi.local
 # odroid3
+# v2 ansible_host=10.20.2.15
 
 [test-station]
 # dc10b
@@ -108,6 +116,8 @@ bb5
 bb7
 # negk
 pdp11
+# v2 ansible_host=10.20.2.15
+# v2
 
 [conky]
 piggy
@@ -126,3 +136,10 @@ bb7
 val1
 dell04
 pdp11
+
+[review]
+# v2 ansible_host=10.2.2.238
+
+[xfce-desktop]
+# v2 ansible_host=10.20.2.15
+v2

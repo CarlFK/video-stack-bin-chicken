@@ -1,7 +1,8 @@
 ---
 staticips:
   write_hosts: false
-  write_interfaces: True
+  write_interfaces: false
+  # write_interfaces: True
   gateway: 10.20.0.1
   hosts:
   - hostname: pm2
