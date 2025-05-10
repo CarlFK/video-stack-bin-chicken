@@ -1,0 +1,8 @@
+---
+autoruns:
+  - {cmd: "watch -d 'ip a'", filename: showipa }
+  - {cmd: "watch -d 'ip r'", filename: showipr }
+  - cmd: xfce4-terminal --title="cut list" --geometry=20x5 --hide-menubar --command="tail -f /srv/video/{{ org }}/{{ show }}/dv/{{ room_name }}/cutlist.log"
+    filename: cutlist
+  - cmd: watch -d 'ls -lt /srv/video/{{ org }}/{{ show }}/dv/{{ room_name }}/*'
+    filename: recordwatch2
