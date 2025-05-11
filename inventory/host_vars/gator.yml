@@ -1,12 +1,11 @@
 ---
-org: fossi
-show: latch_2024
-room_name: r45_230
+org: smwc
+show: smwcon_spring_2025
+room_name: b7141
 
 sources:
   - Camera1
   - Grabber
-
 
 blackmagic_sources:
 - card: 0
